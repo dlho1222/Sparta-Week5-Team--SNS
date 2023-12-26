@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_ToolBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#26A69A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_ToolBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_ParentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#26A69A"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_Profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_rounded"
+                    android:clipToOutline="true"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_EngName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="NEWJEANS DINIEL"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/iv_Profile"
+                    app:layout_constraintTop_toTopOf="@id/iv_Profile" />
+
+                <TextView
+                    android:id="@+id/tv_KR_Name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="다니엘"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_EngName"
+                    app:layout_constraintTop_toBottomOf="@id/tv_EngName" />
+
+                <TextView
+                    android:id="@+id/tv_MBTI"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="MBTI: ESTJ"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_KR_Name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_KR_Name" />
+
+                <TextView
+                    android:id="@+id/tv_Status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="오늘은 공연으로 게더 부재 중입니다."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_MBTI"
+                    app:layout_constraintTop_toBottomOf="@id/tv_MBTI" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_DetailImage"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint_Profile" />
+
+
+            <TextView
+                android:id="@+id/tv_Description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+
+                tools:text="8/12 : 인어공주 뮤직비디오 촬영차 미국에 다녀오게 되었습니다."
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="@id/iv_DetailImage"
+                app:layout_constraintStart_toStartOf="@id/iv_DetailImage"
+                app:layout_constraintTop_toBottomOf="@id/iv_DetailImage" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="더보기"
+                android:id="@+id/tv_ViewMore"
+                app:layout_constraintTop_toBottomOf="@id/tv_Description"
+                app:layout_constraintEnd_toEndOf="@id/tv_Description"
+                android:visibility="gone"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="접기"
+                android:id="@+id/tv_CloseDescription"
+                app:layout_constraintTop_toBottomOf="@id/tv_Description"
+                app:layout_constraintEnd_toEndOf="@id/tv_Description"
+                android:visibility="gone"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/tv_Description"
+                app:layout_constraintStart_toStartOf="@id/tv_Description"
+                app:layout_constraintTop_toBottomOf="@id/tv_Description">
+
+                <ImageView
+                    android:id="@+id/iv_AddComment"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/comment"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_Comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="너무 아름답네요!"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
