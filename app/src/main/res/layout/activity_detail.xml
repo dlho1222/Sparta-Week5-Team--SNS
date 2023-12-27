@@ -91,7 +91,7 @@
 
 
             <ImageView
-                android:id="@+id/iv_DetailImage"
+                android:id="@+id/iv_ContentsImage"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="20dp"
@@ -111,10 +111,10 @@
                 android:maxLines="1"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/iv_DetailImage"
+                app:layout_constraintEnd_toEndOf="@id/iv_ContentsImage"
 
-                app:layout_constraintStart_toStartOf="@id/iv_DetailImage"
-                app:layout_constraintTop_toBottomOf="@id/iv_DetailImage"
+                app:layout_constraintStart_toStartOf="@id/iv_ContentsImage"
+                app:layout_constraintTop_toBottomOf="@id/iv_ContentsImage"
                 tools:text="8/12 : 인어공주 뮤직비디오 촬영차 미국에 다녀오게 되었습니다." />
 
             <TextView
@@ -186,6 +186,8 @@
     </ScrollView>
 
     <EditText
+        android:background="@drawable/bg_input_box"
+        android:hint="댓글달기"
         android:id="@+id/et_Comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

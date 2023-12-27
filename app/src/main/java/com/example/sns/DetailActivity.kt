@@ -10,13 +10,13 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 
 class DetailActivity : AppCompatActivity() {
-    private var isHeart = false
+    private var isHeart = false //좋아요 상태
+    private var commentSave = "" //댓글 저장하기 위한 변수
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         val toolBar = findViewById<Toolbar>(R.id.tb_ToolBar)
-        val commentImage = findViewById<ImageView>(R.id.iv_AddComment)
-        val ivSend = findViewById<ImageView>(R.id.iv_Send)
+        val ivComment = findViewById<ImageView>(R.id.iv_AddComment)
         val etComment = findViewById<EditText>(R.id.et_Comment)
         val ivHeart = findViewById<ImageView>(R.id.iv_Heart)
         val ivEmptyHeart = findViewById<ImageView>(R.id.iv_EmptyHeart)
@@ -26,16 +26,18 @@ class DetailActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        commentImage.setOnClickListener {//코멘트 이미지 눌렀을 때 다이얼로그
+        ivComment.setOnClickListener {//코멘트 이미지 눌렀을 때 다이얼로그
             //addCommentDialog()
             showCommentWindow()
         }
-
-        ivSend.setOnClickListener {
-            if (etComment.text.isNullOrEmpty() || etComment.text.trim() == "") return@setOnClickListener
-            addComment(etComment.text.toString())
-            etComment.setText("")
+        val ivSend = findViewById<ImageView>(R.id.iv_Send)?.apply {
+            setOnClickListener {
+                if (etComment.text.isNullOrEmpty() || etComment.text.trim() == "") return@setOnClickListener
+                addComment(etComment.text.toString())
+                etComment.setText("") //다이렉트 아이콘 누르면 빈칸으로
+            }
         }
+
 
         ivHeart.setOnClickListener {
             changeIcon(isHeart, ivHeart)
@@ -51,7 +53,6 @@ class DetailActivity : AppCompatActivity() {
     private fun changeIcon(isHeart: Boolean, heartImage: ImageView) { // 아이콘 변경
         this.isHeart = !isHeart
         heartImage.isVisible = this.isHeart
-
     }
 
     private fun setDescription() {
@@ -69,7 +70,6 @@ class DetailActivity : AppCompatActivity() {
                 finish()
                 true
             }
-
             else -> {
                 super.onOptionsItemSelected(item)
             }
@@ -92,9 +92,8 @@ class DetailActivity : AppCompatActivity() {
 //    }
     private fun addComment(text: String) { //댓글 달기
         val comment = findViewById<TextView>(R.id.tv_Comment)
-        text?.let {
-            comment.append("id " + text + "\n")
-        }
+            comment.append("id  " + text + "\n")
+            commentSave = comment.toString()
         //TODO id 메인액티비티에서 받아 올 예정
     }
 
@@ -128,11 +127,22 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun showCommentWindow() {
+    private fun showCommentWindow() { //EditText , directIcon 보여주기
         val et_Comment = findViewById<EditText>(R.id.et_Comment)
         val iv_Send = findViewById<ImageView>(R.id.iv_Send)
         et_Comment.isVisible = !et_Comment.isVisible
         iv_Send.isVisible = !iv_Send.isVisible
+    }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) { // 저장된 값 불러오기
+        isHeart = savedInstanceState.getBoolean("isHeart",)
+        commentSave = savedInstanceState.getString("comment","")
+        super.onRestoreInstanceState(savedInstanceState)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) { // 저장하기
+        outState.putBoolean("isHeart",isHeart)
+        outState.putString("comment",commentSave)
+        super.onSaveInstanceState(outState)
     }
 }
