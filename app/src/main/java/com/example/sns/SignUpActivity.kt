@@ -3,6 +3,7 @@ package com.example.sns
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -45,9 +46,10 @@ class SignUpActivity : AppCompatActivity() {
                 // 이름 데이터 값 MainActivity에 넘기기
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("name", userName_data)
+//                Log.d("SignUpActivity", "name : $userName_data")
 
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
-                finish()
+                startActivity(intent)
             }
         }
     }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -17,11 +18,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
+        val tv_name = findViewById<TextView>(R.id.tv_signedIn)
 
-        btn_signIn.setOnClickListener{
+        btn_signIn.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
+
+        val userName_data = intent.getStringExtra("name")
+//        Log.d("MainActivity","name : $userName_data")
+        tv_name.setText(userName_data.toString())
+//        Log.d("MainActivity","name : ${intent.hasExtra("name")}")
+
+        if (intent.hasExtra("name")) {
+            btn_signIn.visibility = View.INVISIBLE
+            tv_name.visibility = View.VISIBLE
+        } else {
+            btn_signIn.visibility = View.VISIBLE
+            tv_name.visibility = View.INVISIBLE
+        }
+
 
         /*
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -39,7 +55,11 @@ class MainActivity : AppCompatActivity() {
         */
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val snackbar = Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_INDEFINITE)
+            val snackbar = Snackbar.make(
+                findViewById(android.R.id.content),
+                "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!",
+                Snackbar.LENGTH_INDEFINITE
+            )
             snackbar.setAction("닫기") {
                 snackbar.dismiss()
             }
@@ -47,7 +67,11 @@ class MainActivity : AppCompatActivity() {
         }, 5000)
 
         fun popUpSnackbar(view: View) {
-            val snackbar = Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_INDEFINITE)
+            val snackbar = Snackbar.make(
+                findViewById(android.R.id.content),
+                "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!",
+                Snackbar.LENGTH_INDEFINITE
+            )
             snackbar.setAction("닫기") {
                 snackbar.dismiss()
             }

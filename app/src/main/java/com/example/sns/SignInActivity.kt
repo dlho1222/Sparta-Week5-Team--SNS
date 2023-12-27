@@ -25,7 +25,6 @@ class SignInActivity : AppCompatActivity() {
 
         // 로그인 버튼 클릭 시 MainActivity로 전환
         btn_login.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
 
             // 입력받은 이메일, 비밀번호 데이터 값
             val userId_data = user_Email.text.toString()
