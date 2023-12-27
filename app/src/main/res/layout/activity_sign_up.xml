@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/logo2" />
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_signUpName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_signUpLogo" />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/et_signUpName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your name"
@@ -40,7 +40,7 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_signUpName" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayout_idCheck"
@@ -49,20 +49,20 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name">
+        app:layout_constraintTop_toBottomOf="@+id/et_signUpName">
 
         <TextView
-            android:id="@+id/tv_id"
+            android:id="@+id/tv_signUpEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ID"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/et_id"
+            app:layout_constraintBottom_toTopOf="@id/et_signUpEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/et_id"
+            android:id="@+id/et_signUpEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
@@ -74,7 +74,7 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="@id/constraintlayout_idCheck"
-            app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_signUpEmail" />
 
         <Button
             android:id="@+id/btn_repeatCheck"
@@ -86,12 +86,12 @@
             app:layout_constraintEnd_toEndOf="@+id/constraintlayout_idCheck"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/et_id"
-            app:layout_constraintTop_toBottomOf="@id/tv_id" />
+            app:layout_constraintStart_toEndOf="@id/et_signUpEmail"
+            app:layout_constraintTop_toBottomOf="@id/tv_signUpEmail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tv_password"
+        android:id="@+id/tv_signUpPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -102,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintlayout_idCheck" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/et_signUpPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your password"
@@ -111,19 +111,20 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_signUpPassword" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayout_bottomBtn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_signUpPassword">
 
         <Button
-            android:id="@+id/btn_cancle"
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="14dp"
@@ -147,7 +148,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/constraintlayout_bottomBtn"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@id/btn_cancle"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
             app:layout_constraintTop_toTopOf="parent" />
 
 
