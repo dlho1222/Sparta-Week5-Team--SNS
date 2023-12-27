@@ -34,7 +34,7 @@ class SignInActivity : AppCompatActivity() {
             if (userId_data.trim().isEmpty() || userPw_data.trim().isEmpty()) {
                 Toast.makeText(this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
             } else {
-                startActivity(intent)
+                finish()
             }
         }
 

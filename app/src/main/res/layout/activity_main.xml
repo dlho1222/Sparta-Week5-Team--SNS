@@ -6,13 +6,556 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--전체 레이아웃 ScrollView 사용-->
+    <ScrollView
+        android:id="@+id/topscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--ScrollView에는 하나의 자식 레이아웃만 허용됨-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Top Logo layout-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mainTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tv_teamLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/py_bold"
+                    android:text="커피4조"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_signIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/py_bold"
+                    android:onClick="goToSignIn"
+                    android:padding="10dp"
+                    android:text="Sign In"
+                    android:visibility="visible"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_teamLogo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_teamLogo" />
+
+                <TextView
+                    android:id="@+id/tv_signedIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/py_bold"
+                    android:padding="10dp"
+                    android:text="안녕하세요 롤리팝 님"
+                    android:textSize="14sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_teamLogo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_teamLogo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Reels View-->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels1"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_reels1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels1"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels1"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels1" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels2"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels1"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels1"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels1" />
+
+                    <TextView
+                        android:id="@+id/tv_reels2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels2"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels2"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels2" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels3"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels2"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels2"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels2" />
+
+                    <TextView
+                        android:id="@+id/tv_reels3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels3"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels3"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels3" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels4"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels3"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels3"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels3" />
+
+                    <TextView
+                        android:id="@+id/tv_reels4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels4"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels4"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels4" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels5"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels4"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels4"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels4" />
+
+                    <TextView
+                        android:id="@+id/tv_reels5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels5"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels5"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels5" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels6"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels5"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels5"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels5" />
+
+                    <TextView
+                        android:id="@+id/tv_reels6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels6"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels6"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels6" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels7"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels6"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels6"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels6" />
+
+                    <TextView
+                        android:id="@+id/tv_reels7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels7"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels7"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels7" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_reels8"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/swings"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF9147"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_reels7"
+                        app:layout_constraintStart_toEndOf="@id/iv_reels7"
+                        app:layout_constraintTop_toTopOf="@id/iv_reels7" />
+
+                    <TextView
+                        android:id="@+id/tv_reels8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        app:layout_constraintEnd_toEndOf="@id/iv_reels8"
+                        app:layout_constraintStart_toStartOf="@id/iv_reels8"
+                        app:layout_constraintTop_toBottomOf="@id/iv_reels8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <!--디바이더-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider" />
+
+
+            <!--첫 번째 컨텐츠-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/gogo"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#FF9147"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_profile1_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Username"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile1"
+                    app:layout_constraintStart_toEndOf="@id/iv_profile1"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile1" />
+
+                <ImageView
+                    android:id="@+id/iv_profile1_detail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile1" />
+
+                <ImageView
+                    android:id="@+id/iv_profile1_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/gogo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile1" />
+
+                <TextView
+                    android:id="@+id/iv_profile1_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="[사용자 아이디] 슬슬 추워진다.."
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile1_con" />
+
+                <TextView
+                    android:id="@+id/iv_profile1_comm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="[댓글 사용자 아이디] 패딩 얼마주고 삼?"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile1_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--두 번째 컨텐츠-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/gogo"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#FF9147"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_profile2_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Username"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile2"
+                    app:layout_constraintStart_toEndOf="@id/iv_profile2"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile2" />
+
+                <ImageView
+                    android:id="@+id/iv_profile2_detail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile2" />
+
+                <ImageView
+                    android:id="@+id/iv_profile2_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/gogo2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile2" />
+
+                <TextView
+                    android:id="@+id/iv_profile2_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="[사용자 아이디] 을왕리에서 보낸 좋은사람들과 좋은자리 좋은시간 다 아는사람들이구만.."
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile2_con" />
+
+                <TextView
+                    android:id="@+id/iv_profile2_comm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="[댓글 사용자 아이디] 모자 정보좀요~"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile2_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--세 번째 컨텐츠-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/son"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#FF9147"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_profile3_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Username"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile3"
+                    app:layout_constraintStart_toEndOf="@id/iv_profile3"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile3" />
+
+                <ImageView
+                    android:id="@+id/iv_profile3_detail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile3" />
+
+                <ImageView
+                    android:id="@+id/iv_profile3_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/son"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile3" />
+
+                <TextView
+                    android:id="@+id/iv_profile3_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="[사용자 아이디] 내가 장사하는 사람으로 보여? 너 납치된거야.."
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile3_con" />
+
+                <TextView
+                    android:id="@+id/iv_profile3_comm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="[댓글 사용자 아이디] ?"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile3_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--네 번째 컨텐츠-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/swings"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#FF9147"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_profile4_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Username"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile4"
+                    app:layout_constraintStart_toEndOf="@id/iv_profile4"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile4" />
+
+                <ImageView
+                    android:id="@+id/iv_profile4_detail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile4" />
+
+                <ImageView
+                    android:id="@+id/iv_profile4_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/swings"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile4" />
+
+                <TextView
+                    android:id="@+id/iv_profile4_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="[사용자 아이디] 혹시 돈까스 좋아해요?"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile4_con" />
+
+                <TextView
+                    android:id="@+id/iv_profile4_comm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="[댓글 사용자 아이디] ?"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile4_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="30dp"
+                android:text="스크롤 뷰 Main Page 작성 중"
+                android:textColor="#6E6E6E"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
