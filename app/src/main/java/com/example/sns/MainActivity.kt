@@ -46,31 +46,25 @@ class MainActivity : AppCompatActivity() {
             snackbar.show()
         }
         //클릭 리스너로 사용하는 방법을 생각해 볼 것
-//sefsefsef
 
-        /*
+        fun goToDetail(view: View) {
+            //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
 
-                fun goToDetail(view: View) {
-                    //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, DetailActivity::class.java)
+            startActivity(intent)
+        }
+        fun goToSignIn(view: View) {
+            //Toast.makeText(view.context, "로그인 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, DetailActivity::class.java)
-                    startActivity(intent)
-                }
-                fun goToSignIn(view: View) {
-                    //Toast.makeText(view.context, "로그인 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+        }
+        fun goToMyPage(view: View) {
+            //Toast.makeText(view.context, "내 정보 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, SignInActivity::class.java)
-                    startActivity(intent)
-                }
-                fun goToMyPage(view: View) {
-                    //Toast.makeText(view.context, "내 정보 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-
-                    val intent = Intent(this, MypageActivity::class.java)
-                    startActivity(intent)
-                }
-        */
-
-
+            val intent = Intent(this, MypageActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
 
