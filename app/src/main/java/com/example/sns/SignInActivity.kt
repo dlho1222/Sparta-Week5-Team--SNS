@@ -23,6 +23,7 @@ class SignInActivity : AppCompatActivity() {
         val btn_login = findViewById<Button>(R.id.btn_login)
         val btn_signup = findViewById<Button>(R.id.btn_signup)
 
+
         // 로그인 버튼 클릭 시 MainActivity로 전환
         btn_login.setOnClickListener {
 
@@ -30,10 +31,16 @@ class SignInActivity : AppCompatActivity() {
             val userId_data = user_Email.text.toString()
             val userPw_data = user_Pw.text.toString()
 
+            // SignUp에서 받은 Name 값
+            val userName_data = intent.getStringExtra("name_DataFromSignUpActivity")
+
             if (userId_data.trim().isEmpty() || userPw_data.trim().isEmpty()) {
                 Toast.makeText(this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
             } else {
-                finish()
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("name_DataFromSignUpActivity", userName_data)
+
+                startActivity(intent)
             }
         }
 

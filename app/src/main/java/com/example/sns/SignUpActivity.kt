@@ -3,15 +3,15 @@ package com.example.sns
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
-
-//    lateinit var userName:EditText
-//    lateinit var BtnDone:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,14 +43,15 @@ class SignUpActivity : AppCompatActivity() {
             ) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
             } else {
-                // 이름 데이터 값 MainActivity에 넘기기
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("name", userName_data)
+                // 이름 데이터 값 SignInActivity에 넘기기
+                val intent = Intent(this, SignInActivity::class.java)
+                intent.putExtra("name_DataFromSignUpActivity", userName_data)
 //                Log.d("SignUpActivity", "name : $userName_data")
 
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
                 startActivity(intent)
             }
         }
+
     }
 }
