@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
             tv_name.visibility = View.INVISIBLE
         }
 
-
         /*
                 Handler(Looper.getMainLooper()).postDelayed({
                     Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_LONG).show()
