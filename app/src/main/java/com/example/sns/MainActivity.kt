@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 
@@ -14,6 +15,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
+
+        btn_signIn.setOnClickListener{
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+        }
 
         /*
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -47,18 +55,13 @@ class MainActivity : AppCompatActivity() {
         }
         //클릭 리스너로 사용하는 방법을 생각해 볼 것
 
-        fun goToDetail(view: View) {
-            //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+//        fun goToDetail(view: View) {
+//            //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+//
+//            val intent = Intent(this, DetailActivity::class.java)
+//            startActivity(intent)
+//        }
 
-            val intent = Intent(this, DetailActivity::class.java)
-            startActivity(intent)
-        }
-        fun goToSignIn(view: View) {
-            //Toast.makeText(view.context, "로그인 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
-        }
         fun goToMyPage(view: View) {
             //Toast.makeText(view.context, "내 정보 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
 
