@@ -8,6 +8,10 @@ import android.widget.EditText
 import android.widget.Toast
 
 class SignUpActivity : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
+    }
 
 //    lateinit var userName:EditText
 //    lateinit var BtnDone:Button
@@ -43,7 +47,7 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
             } else {
                 // 이름 데이터 값 MainActivity에 넘기기
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, SignUpActivity::class.java)
                 intent.putExtra("name", userName_data)
 
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
