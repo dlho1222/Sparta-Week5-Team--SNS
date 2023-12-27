@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 
@@ -16,6 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
+
+        btn_signIn.setOnClickListener{
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
+            //(호출하는 엑티비티,사라지는 엑티비티)
+            //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
+        }
 
         /*
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -59,22 +70,9 @@ class MainActivity : AppCompatActivity() {
 
         //클릭 리스너로 사용하는 방법을 생각해 볼 것
 
-        /*
-                fun goToDetail(view: View) {
-                    //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, DetailActivity::class.java)
-                    startActivity(intent)
-                }
-                fun goToSignIn(view: View) {
-                    //Toast.makeText(view.context, "로그인 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-
-                    val intent = Intent(this, SignInActivity::class.java)
-                    startActivity(intent)
-                }
-                */
         fun goToMyPage(view: View) {
-            //Toast.makeText(view.context, "로그인 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, MypageActivity::class.java)
             startActivity(intent)
