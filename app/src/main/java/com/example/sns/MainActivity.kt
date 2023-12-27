@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -19,13 +20,27 @@ class MainActivity : AppCompatActivity() {
 
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
+        val tv_name = findViewById<TextView>(R.id.tv_signedIn)
 
-        btn_signIn.setOnClickListener{
+        btn_signIn.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
             //(호출하는 엑티비티,사라지는 엑티비티)
             //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
+        }
+
+        val userName_data = intent.getStringExtra("name")
+//        Log.d("MainActivity","name : $userName_data")
+        tv_name.setText(userName_data.toString())
+//        Log.d("MainActivity","name : ${intent.hasExtra("name")}")
+
+        if (intent.hasExtra("name")) {
+            btn_signIn.visibility = View.INVISIBLE
+            tv_name.visibility = View.VISIBLE
+        } else {
+            btn_signIn.visibility = View.VISIBLE
+            tv_name.visibility = View.INVISIBLE
         }
 
         /*
