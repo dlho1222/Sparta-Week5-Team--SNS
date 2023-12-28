@@ -57,7 +57,7 @@ object PostList {
         list.add(post)
     }
 
-    fun updateHeart(id: String, isHeart: Boolean) {
-        list.find { id == "Username" }
+    fun updateHeart(id: String, isHeart: Boolean,post:Post) {
+
     }
 }

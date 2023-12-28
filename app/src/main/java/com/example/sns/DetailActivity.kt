@@ -110,20 +110,6 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    //    private fun addCommentDialog(){ // 댓글 팝업창
-//        val editText = EditText(this).apply {
-//            hint = "댓글달기"
-//        }
-//        AlertDialog.Builder(this).apply {
-//            setView(editText)
-//            setNegativeButton("취소"){dialogInterface,_->dialogInterface.cancel()}
-//            setPositiveButton("추가"){_,_->
-//                if(editText.text.isNullOrEmpty() || editText.text.trim() == "") return@setPositiveButton else addComment(editText.text.toString())
-//
-//            }
-//            show()
-//        }
-//    }
     private fun addComment(text: String) { //댓글 달기
         val id = intent.getStringExtra("name_DataFromSignUpActivity")
         //val id = postInfo?.id

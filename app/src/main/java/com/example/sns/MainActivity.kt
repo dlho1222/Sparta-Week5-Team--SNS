@@ -7,10 +7,15 @@ import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var getName: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -41,20 +46,27 @@ class MainActivity : AppCompatActivity() {
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
 
+        getName = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            if (it.resultCode == RESULT_OK) {
+                val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
+
+                tv_name.text = userName
+                btn_signIn.visibility = View.INVISIBLE
+                tv_name.visibility = View.VISIBLE
+            }
+        }
+
         btn_signIn.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
+            getName.launch(intent)
             overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
             //(호출하는 엑티비티,사라지는 엑티비티)
             //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
         }
 
-        val userName_data = intent.getStringExtra("name_DataFromSignUpActivity")
-//        Log.d("MainActivity","name : $userName_data")
-        tv_name.setText(userName_data.toString())
-//        Log.d("MainActivity","name : ${intent.hasExtra("name")}")
-
-        if (intent.hasExtra("name_DataFromSignUpActivity")) {
+        if (intent.hasExtra("userName_DataFromSignUpActivity")) {
             btn_signIn.visibility = View.INVISIBLE
             tv_name.visibility = View.VISIBLE
         } else {
@@ -64,19 +76,19 @@ class MainActivity : AppCompatActivity() {
 
 
         /*
-                Handler(Looper.getMainLooper()).postDelayed({
-                    Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_LONG).show()
-                }, 5000)
-                //findViewById로 루트 뷰를 가져온다고 함
-        */
+            Handler(Looper.getMainLooper()).postDelayed({
+                Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_LONG).show()
+            }, 5000)
+            //findViewById로 루트 뷰를 가져온다고 함
+    */
 
         /*
-                val snackbar = Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_INDEFINITE)
-                snackbar.setAction("닫기") {
-                    snackbar.dismiss()
-                }
-                snackbar.show()
-        */
+            val snackbar = Snackbar.make(findViewById(android.R.id.content), "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!", Snackbar.LENGTH_INDEFINITE)
+            snackbar.setAction("닫기") {
+                snackbar.dismiss()
+            }
+            snackbar.show()
+    */
 
         Handler(Looper.getMainLooper()).postDelayed({
             val snackbar = Snackbar.make(

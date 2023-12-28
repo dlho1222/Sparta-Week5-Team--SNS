@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SNS</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="mbti_estj">MBTI: ESTJ</string>
+    <string name="text_state">Today, I am absent due to a performance.</string>
+    <string name="text_ViewMore">ViewMore</string>
+    <string name="text_ViewClose">Close</string>
+    <string name="et_commentHint">AddComment</string>
+</resources>
