@@ -7,9 +7,8 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import org.w3c.dom.Text
-import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
+import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
     override fun onBackPressed() {
