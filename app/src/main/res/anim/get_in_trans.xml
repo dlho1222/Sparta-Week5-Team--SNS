@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate
+        android:duration="500"
+        android:fromYDelta="100%"
+        android:toYDelta="0%" />
+
+</set>
+
+
+
+    <!-- 참고 링크: https://greedy0110.tistory.com/52 -->
+
+    <!--
+        translate: 이동 애니메이션
+        android:fromYDelta, android:toYDelta, android:duration
+
+        Alpha: 투명도 변화 애니메이션
+        android:fromAlpha, android:toAlpha
+
+        Scale: 크기 변화 애니메이션
+        android:fromXScale, android:toXScale, android:fromYScale, android:toYScale
+
+        Rotate: 회전 애니메이션
+        android:fromDegrees, android:toDegrees, android:pivotX, android:pivotY
+
+        Set: 여러 애니메이션을 그룹화
+        애니메이션 태그를 set 태그 안에 포함
+    -->
