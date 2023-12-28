@@ -22,23 +22,23 @@ class MainActivity : AppCompatActivity() {
 
 
         val profile1 = findViewById<ImageView>(R.id.iv_profile1_con).setOnClickListener {
-            goToDetail(it, UserList.get(0))
+            goToDetail(it, PostList.get(0))
         }
 
         val profile2 = findViewById<ImageView>(R.id.iv_profile2_con).apply {
             setOnClickListener {
-                goToDetail(it, UserList.get(1))
+                goToDetail(it, PostList.get(1))
             }
         }
         val profile3 = findViewById<ImageView>(R.id.iv_profile3_con).apply {
             setOnClickListener {
-                goToDetail(it, UserList.get(2))
+                goToDetail(it, PostList.get(2))
             }
         }
 
         val profile4 = findViewById<ImageView>(R.id.iv_profile4_con).apply {
             setOnClickListener {
-                goToDetail(it, UserList.get(3))
+                goToDetail(it, PostList.get(3))
             }
         }
 
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
-                val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
+                val userName = it.data?.getStringExtra(getString(R.string.intent_data_userName)) ?: ""
 
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
         }
 
-        if (intent.hasExtra("userName_DataFromSignUpActivity")) {
+        if (intent.hasExtra(getString(R.string.intent_data_userName))) {
             btn_signIn.visibility = View.INVISIBLE
             tv_name.visibility = View.VISIBLE
         } else {
@@ -115,10 +115,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToDetail(view: View, UserContents: User) {
+    private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, DetailActivity::class.java).apply {
-            putExtra("user", UserContents)
+            putExtra("user", postContents)
         }
         startActivity(intent)
     }

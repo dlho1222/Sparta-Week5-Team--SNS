@@ -43,7 +43,6 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_rounded"
                     android:clipToOutline="true"
                     android:src="@drawable/ic_launcher_foreground"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +54,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="NEWJEANS DINIEL"
+                    android:text="DINIEL"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/iv_Profile"
@@ -83,7 +82,7 @@
                     android:id="@+id/tv_Status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="오늘은 공연으로 게더 부재 중입니다."
+                    android:text="오늘은 공연으로 부재 중입니다."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_MBTI"
                     app:layout_constraintTop_toBottomOf="@id/tv_MBTI" />
@@ -137,15 +136,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_Description" />
 
 
-            <ImageView
-                android:id="@+id/iv_EmptyHeart"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/emptyheart"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_CloseDescription" />
 
             <ImageView
                 android:id="@+id/iv_Heart"
@@ -153,8 +143,7 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/heart"
-                android:visibility="gone"
+                android:src="@drawable/emptyheart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_CloseDescription" />
 
@@ -179,7 +168,7 @@
                 android:textSize="22dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_EmptyHeart"
+                app:layout_constraintTop_toBottomOf="@id/iv_Heart"
 
                 tools:text="너무 아름답네요!" />
 
