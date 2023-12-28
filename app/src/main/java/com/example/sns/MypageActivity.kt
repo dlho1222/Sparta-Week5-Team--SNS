@@ -22,10 +22,15 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 
 class MypageActivity : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypage)
-        val ivProfilePic =findViewById<ImageView>(R.id.iv_profilePic)
+        val ivProfilePic = findViewById<ImageView>(R.id.iv_profilePic)
         val ivEditname = findViewById<ImageView>(R.id.iv_editname)
         val ivNameok = findViewById<ImageView>(R.id.iv_nameok)
         val ivEditmbtihobby = findViewById<ImageView>(R.id.iv_editMbtiHobby)
@@ -70,9 +75,7 @@ class MypageActivity : AppCompatActivity() {
         }
 
 
-
     }
-
 
     private val pickImageLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -88,14 +91,14 @@ class MypageActivity : AppCompatActivity() {
         pickImageLauncher.launch(intent)
     }
 
-    private fun editNameCommentClick(id:Int){
+    private fun editNameCommentClick(id: Int) {
         val etName = findViewById<EditText>(R.id.et_mypageName)
         val etComment = findViewById<EditText>(R.id.et_mypageComment)
         val tvName = findViewById<TextView>(R.id.tv_mypageName)
         val tvComment = findViewById<TextView>(R.id.tv_mypageComment)
 
-        when(id){
-            R.id.iv_editname->{
+        when (id) {
+            R.id.iv_editname -> {
                 tvName.isGone = true
                 tvComment.isGone = true
                 etName.isVisible = true
@@ -103,7 +106,8 @@ class MypageActivity : AppCompatActivity() {
                 etName.setText(tvName.text)
                 etComment.setText(tvComment.text)
             }
-            R.id.iv_nameok->{
+
+            R.id.iv_nameok -> {
                 etName.isGone = true
                 etComment.isGone = true
                 tvName.isVisible = true
@@ -114,14 +118,14 @@ class MypageActivity : AppCompatActivity() {
         }
     }
 
-    private fun editMbtiHobbyClick(id:Int){
+    private fun editMbtiHobbyClick(id: Int) {
         val etMbti = findViewById<EditText>(R.id.et_mbti)
         val etHobby = findViewById<EditText>(R.id.et_hobby)
         val tvMbti = findViewById<TextView>(R.id.tv_mbti)
         val tvHobby = findViewById<TextView>(R.id.tv_hobby)
 
-        when(id){
-            R.id.iv_editMbtiHobby->{
+        when (id) {
+            R.id.iv_editMbtiHobby -> {
                 tvMbti.isGone = true
                 tvHobby.isGone = true
                 etMbti.isVisible = true
@@ -129,7 +133,8 @@ class MypageActivity : AppCompatActivity() {
                 etMbti.setText(tvMbti.text)
                 etHobby.setText(tvHobby.text)
             }
-            R.id.iv_mbtiHobbyOk->{
+
+            R.id.iv_mbtiHobbyOk -> {
                 etMbti.isGone = true
                 etHobby.isGone = true
                 tvMbti.isVisible = true
@@ -140,21 +145,16 @@ class MypageActivity : AppCompatActivity() {
         }
     }
 
+    fun deletePost(post: View) {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("정말 삭제하시겠습니까?")
+            .setPositiveButton("확인", { dialog, id ->
+                post.isGone = true
+            })
+            .setNegativeButton("취소",
+                { dialog, id ->
 
-
-        fun deletePost(post:View){
-            val builder = AlertDialog.Builder(this)
-            builder.setMessage("정말 삭제하시겠습니까?")
-                .setPositiveButton("확인", { dialog, id ->
-                    post.isGone=true
                 })
-                .setNegativeButton("취소",
-                    { dialog, id ->
-
-                    })
-            builder.show()
-        }
-
-
-
+        builder.show()
+    }
 }
