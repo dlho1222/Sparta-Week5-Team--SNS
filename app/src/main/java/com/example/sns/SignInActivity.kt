@@ -32,12 +32,14 @@ class SignInActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
-                val userName = it.data?.getStringExtra("id") ?: ""
-                val userEmail = it.data?.getStringExtra(getString(R.string.intent_data_userEmail)) ?: ""
-                val userPw = it.data?.getStringExtra(getString(R.string.intent_data_userPw)) ?: ""
+
+                val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
+                val userEmail = it.data?.getStringExtra("userEmail_DataFromSignUpActivity") ?: ""
+                val userPw = it.data?.getStringExtra("userPw_DataFromSignUpActivity") ?: ""
 
                 val intent = Intent(this, MainActivity::class.java).apply {
-                    putExtra("id", userName)
+                    putExtra("userName_DataFromSignUpActivity", userName)
+
                 }
                 setResult(RESULT_OK, intent)
 

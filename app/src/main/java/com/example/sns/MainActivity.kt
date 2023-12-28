@@ -15,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var getName: ActivityResultLauncher<Intent>
+    private var id = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,12 +46,13 @@ class MainActivity : AppCompatActivity() {
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
 
+        // SignInActivity에서 이름, 이메일 받아오도록
         getName = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
-                val userName = it.data?.getStringExtra(getString(R.string.intent_data_userName)) ?: ""
-
+                val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
+                id = userName
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
                 tv_name.visibility = View.VISIBLE
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
         }
 
-        if (intent.hasExtra(getString(R.string.intent_data_userName))) {
+        if (intent.hasExtra("userName_DataFromSignUpActivity")) {
             btn_signIn.visibility = View.INVISIBLE
             tv_name.visibility = View.VISIBLE
         } else {
@@ -116,10 +118,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-        val userName_data = intent.getStringExtra("id")
         val intent = Intent(this, DetailActivity::class.java).apply {
-            putExtra("user", postContents)
-            putExtra("id",userName_data)
+            putExtra(POST_INFO, postContents)
+            putExtra(ID,id)
         }
         startActivity(intent)
     }

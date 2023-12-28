@@ -22,7 +22,4 @@
     <string name="toast_msg_notEmailForm">
 Please follow the input email format.</string>
     <string name="toast_msg_signUp">Success Signup</string>
-    <string name="intent_data_userName">userName_DataFromSignUpActivity</string>
-    <string name="intent_data_userEmail">userEmail_DataFromSignUpActivity</string>
-    <string name="intent_data_userPw">userPw_DataFromSignUpActivity</string>
 </resources>
