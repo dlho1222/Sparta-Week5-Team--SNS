@@ -33,13 +33,15 @@ class SignInActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
+
                 val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
                 val userEmail = it.data?.getStringExtra("userEmail_DataFromSignUpActivity") ?: ""
                 val userPw = it.data?.getStringExtra("userPw_DataFromSignUpActivity") ?: ""
 
                 val intent = Intent(this, MainActivity::class.java).apply {
                     putExtra("userName_DataFromSignUpActivity", userName)
-                    putExtra("userEmail_DataFromSignUpActivity",userEmail)
+                    putExtra(EMAIL,userEmail)
+
                 }
                 setResult(RESULT_OK, intent)
 
@@ -56,7 +58,7 @@ class SignInActivity : AppCompatActivity() {
             val userPw_data = user_Pw.text.toString()
 
             if (userEmail_data.trim().isEmpty() || userPw_data.trim().isEmpty()) {
-                Toast.makeText(this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_msg_idpwNoInput), Toast.LENGTH_SHORT).show()
             } else {
                 finish()
             }

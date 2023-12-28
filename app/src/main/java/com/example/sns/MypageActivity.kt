@@ -42,7 +42,7 @@ class MypageActivity : AppCompatActivity() {
         val delPost2 = findViewById<ImageView>(R.id.iv_deleteIcon2)
         val delPost3 = findViewById<ImageView>(R.id.iv_deleteIcon3)
 
-        userInfo = intent.getParcelableExtra("userInfo")
+        userInfo = intent.getParcelableExtra(USER_INFO)
 
         userInfo?.profileImg?.let {
             ivProfilePic.setImageResource(it) }

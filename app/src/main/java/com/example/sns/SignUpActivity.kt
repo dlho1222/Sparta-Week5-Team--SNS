@@ -7,9 +7,8 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import org.w3c.dom.Text
-import java.util.regex.Pattern
 import androidx.appcompat.app.AppCompatActivity
+import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
     override fun onBackPressed() {
@@ -35,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
         val btn_done = findViewById<Button>(R.id.btn_done)
 
         btn_cancel.setOnClickListener {
-            Toast.makeText(this, "취소하셨습니다", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_msg_cancel), Toast.LENGTH_SHORT).show()
             finish()
         }
 
@@ -49,9 +48,9 @@ class SignUpActivity : AppCompatActivity() {
             if (userName_data.trim().isEmpty() || userEmail_data.trim()
                     .isEmpty() || userPw_data.trim().isEmpty()
             ) {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_msg_noInput), Toast.LENGTH_SHORT).show()
             } else if (!check(user_email)) {
-                Toast.makeText(this, "이메일 형식을 지켜주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_msg_notEmailForm), Toast.LENGTH_SHORT).show()
             } else {
                 // 이름 데이터 값 SignInActivity에 넘기기
                 val intent = Intent(this, SignInActivity::class.java).apply {
@@ -61,7 +60,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
                 setResult(RESULT_OK, intent)
 
-                Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_msg_signUp), Toast.LENGTH_SHORT).show()
                 finish()
             }
         }
@@ -84,7 +83,7 @@ class SignUpActivity : AppCompatActivity() {
                     )
                 ) {
                     when (editText.id) {
-                        R.id.et_signUpEmail -> editText.error = "이메일형식을 지켜주세요"
+                        R.id.et_signUpEmail -> editText.error = getString(R.string.toast_msg_notEmailForm)
                         else -> ""
                     }
                 }
