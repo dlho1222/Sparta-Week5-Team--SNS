@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">SNS</string>
-    <string name="email">Email</string>
-    <string name="enter_your_email">Enter your Email</string>
     <string name="mbti_estj">MBTI: ESTJ</string>
     <string name="text_state">오늘은 공연으로 부재 중입니다.</string>
     <string name="text_ViewMore">더보기</string>
