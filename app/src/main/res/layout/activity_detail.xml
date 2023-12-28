@@ -91,6 +91,7 @@
 
 
             <ImageView
+                android:scaleType="centerInside"
                 android:id="@+id/iv_ContentsImage"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
