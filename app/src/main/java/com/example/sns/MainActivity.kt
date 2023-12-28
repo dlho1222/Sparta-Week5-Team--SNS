@@ -4,11 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var getName: ActivityResultLauncher<Intent>
+    private var id = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -97,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         ) {
             if (it.resultCode == RESULT_OK) {
                 val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
-
+                id = userName
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
                 tv_name.visibility = View.VISIBLE
@@ -163,10 +162,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-        val userName_data = intent.getStringExtra("name_DataFromSignUpActivity")
         val intent = Intent(this, DetailActivity::class.java).apply {
-            putExtra("user", postContents)
-            putExtra("name_DataFromSignUpActivity",userName_data)
+            putExtra(POST_INFO, postContents)
+            putExtra(ID,id)
         }
         startActivity(intent)
     }

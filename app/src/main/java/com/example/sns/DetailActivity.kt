@@ -23,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
 
 
 
-        postInfo = intent.getParcelableExtra<Post>("user")
+        postInfo = intent.getParcelableExtra<Post>(POST_INFO)
 
         isHeart = postInfo?.isLike ?: false
 
@@ -117,8 +117,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun addComment(text: String) { //댓글 달기
-        val id = intent.getStringExtra("name_DataFromSignUpActivity")
-        //val id = postInfo?.id
+        val id = intent.getStringExtra(ID)
         val tvComment = findViewById<TextView>(R.id.tv_Comment)
         saveComment += "[$id]  $text\n"
 
