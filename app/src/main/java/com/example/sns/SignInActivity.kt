@@ -2,6 +2,7 @@ package com.example.sns
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -39,6 +40,7 @@ class SignInActivity : AppCompatActivity() {
 
                 val intent = Intent(this, MainActivity::class.java).apply {
                     putExtra("userName_DataFromSignUpActivity", userName)
+                    putExtra(EMAIL,userEmail)
 
                 }
                 setResult(RESULT_OK, intent)
