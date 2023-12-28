@@ -13,6 +13,10 @@ import org.w3c.dom.Text
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +56,9 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 // 이름 데이터 값 SignInActivity에 넘기기
                 val intent = Intent(this, SignInActivity::class.java).apply {
-                    putExtra("name_DataFromSignUpActivity", userName_data)
+                    putExtra("userName_DataFromSignUpActivity", userName_data)
                     putExtra("userEmail_DataFromSignUpActivity", userEmail_data)
                     putExtra("userPw_DataFromSignUpActivity", userPw_data)
-//                Log.d("SignUpActivity", "name : $userName_data")
                 }
                 setResult(RESULT_OK, intent)
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
