@@ -21,7 +21,4 @@
     <string name="toast_msg_noInput">입력되지 않은 정보가 있습니다</string>
     <string name="toast_msg_notEmailForm">이메일 형식을 지켜주세요</string>
     <string name="toast_msg_signUp">회원가입 성공!</string>
-    <string name="intent_data_userName">userName_DataFromSignUpActivity</string>
-    <string name="intent_data_userEmail">userEmail_DataFromSignUpActivity</string>
-    <string name="intent_data_userPw">userPw_DataFromSignUpActivity</string>
 </resources>
