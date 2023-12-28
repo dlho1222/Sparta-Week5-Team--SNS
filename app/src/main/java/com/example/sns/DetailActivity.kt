@@ -21,6 +21,7 @@ class DetailActivity : AppCompatActivity() {
         val etComment = findViewById<EditText>(R.id.et_Comment)
         val ivHeart = findViewById<ImageView>(R.id.iv_Heart)
 
+
         postInfo = intent.getParcelableExtra<Post>("user")
 
         isHeart = postInfo?.isLike ?: false

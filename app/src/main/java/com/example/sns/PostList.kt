@@ -13,7 +13,6 @@ object PostList {
                 "[사용자 아이디] 슬슬 추워진다..",
                 "Username",
                 "[한나] 패딩 얼마주고 삼?",
-
             )
         )
         add(
