@@ -1,10 +1,28 @@
 <resources>
     <string name="app_name">SNS</string>
-    <string name="email">Email</string>
-    <string name="enter_your_email">Enter your Email</string>
     <string name="mbti_estj">MBTI: ESTJ</string>
     <string name="text_state">Today, I am absent due to a performance.</string>
     <string name="text_ViewMore">ViewMore</string>
     <string name="text_ViewClose">Close</string>
     <string name="et_commentHint">AddComment</string>
+    <string name="signIn_email">Email</string>
+    <string name="signIn_email_et">input Email</string>
+    <string name="signIn_pw">Password</string>
+    <string name="signIn_pw_et">Input Password</string>
+    <string name="signIn_login">Login</string>
+    <string name="signIn_signUp">SignUp</string>
+    <string name="signUp_name">Name</string>
+    <string name="signUp_name_et">Input Name</string>
+    <string name="signUp_repeatCheck_btn">Duplicate check</string>
+    <string name="signUp_cancel_btn">Cancel</string>
+    <string name="signUp_done_btn">Complete</string>
+    <string name="toast_msg_idpwNoInput">Confirm ID/Password</string>
+    <string name="toast_msg_cancel">Cancel</string>
+    <string name="toast_msg_noInput">There is information that has not been entered</string>
+    <string name="toast_msg_notEmailForm">
+Please follow the input email format.</string>
+    <string name="toast_msg_signUp">Success Signup</string>
+    <string name="intent_data_userName">userName_DataFromSignUpActivity</string>
+    <string name="intent_data_userEmail">userEmail_DataFromSignUpActivity</string>
+    <string name="intent_data_userPw">userPw_DataFromSignUpActivity</string>
 </resources>

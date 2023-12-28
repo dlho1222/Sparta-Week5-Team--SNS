@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
-                val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
+                val userName = it.data?.getStringExtra(getString(R.string.intent_data_userName)) ?: ""
 
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
         }
 
-        if (intent.hasExtra("userName_DataFromSignUpActivity")) {
+        if (intent.hasExtra(getString(R.string.intent_data_userName))) {
             btn_signIn.visibility = View.INVISIBLE
             tv_name.visibility = View.VISIBLE
         } else {
