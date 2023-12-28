@@ -22,6 +22,7 @@ class DetailActivity : AppCompatActivity() {
         val ivHeart = findViewById<ImageView>(R.id.iv_Heart)
 
 
+
         postInfo = intent.getParcelableExtra<Post>("user")
 
         isHeart = postInfo?.isLike ?: false
@@ -32,6 +33,12 @@ class DetailActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val tvEngName = findViewById<TextView>(R.id.tv_Eng_Name).apply {
+            text = postInfo?.engName
+        }
+        val tvName = findViewById<TextView>(R.id.tv_KR_Name).apply {
+            text = postInfo?.krName
+        }
 
         val ivContents = findViewById<ImageView>(R.id.iv_ContentsImage).apply {
             postInfo?.contentsImage?.let { setImageResource(it) }
@@ -118,8 +125,8 @@ class DetailActivity : AppCompatActivity() {
 //        }
 //    }
     private fun addComment(text: String) { //댓글 달기
-
-        val id = postInfo?.id
+        val id = intent.getStringExtra("name_DataFromSignUpActivity")
+        //val id = postInfo?.id
         val tvComment = findViewById<TextView>(R.id.tv_Comment)
         saveComment += "[$id]  $text\n"
 

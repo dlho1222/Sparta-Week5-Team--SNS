@@ -43,14 +43,16 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_rounded"
                     android:clipToOutline="true"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/ic_launcher_foreground"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_EngName"
+                    android:id="@+id/tv_Eng_Name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -66,8 +68,8 @@
                     android:layout_height="wrap_content"
                     android:text="다니엘"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/tv_EngName"
-                    app:layout_constraintTop_toBottomOf="@id/tv_EngName" />
+                    app:layout_constraintStart_toStartOf="@id/tv_Eng_Name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Eng_Name" />
 
                 <TextView
                     android:id="@+id/tv_MBTI"
@@ -90,12 +92,12 @@
 
 
             <ImageView
-                android:scaleType="centerInside"
                 android:id="@+id/iv_ContentsImage"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="50dp"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_launcher_foreground"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +136,6 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/tv_Description"
                 app:layout_constraintTop_toBottomOf="@id/tv_Description" />
-
 
 
             <ImageView
@@ -176,12 +177,12 @@
     </ScrollView>
 
     <EditText
-        android:background="@drawable/bg_input_box"
-        android:hint="댓글달기"
         android:id="@+id/et_Comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_input_box"
+        android:hint="댓글달기"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/iv_Send"
