@@ -45,17 +45,19 @@
                     android:layout_marginBottom="10dp"
                     android:clipToOutline="true"
                     android:background="@drawable/edgeround"
+                    android:foreground="@drawable/edgestroke"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/ic_launcher_foreground"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_EngName"
+                    android:id="@+id/tv_Eng_Name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="DINIEL"
+                    tools:text="DINIEL"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/iv_Profile"
@@ -65,16 +67,16 @@
                     android:id="@+id/tv_KR_Name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="다니엘"
+                    tools:text="다니엘"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/tv_EngName"
-                    app:layout_constraintTop_toBottomOf="@id/tv_EngName" />
+                    app:layout_constraintStart_toStartOf="@id/tv_Eng_Name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Eng_Name" />
 
                 <TextView
                     android:id="@+id/tv_MBTI"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="MBTI: ESTJ"
+                    android:text="@string/mbti_estj"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_KR_Name"
                     app:layout_constraintTop_toBottomOf="@id/tv_KR_Name" />
@@ -83,7 +85,7 @@
                     android:id="@+id/tv_Status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="오늘은 공연으로 부재 중입니다."
+                    android:text="@string/text_state"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_MBTI"
                     app:layout_constraintTop_toBottomOf="@id/tv_MBTI" />
@@ -91,12 +93,13 @@
 
 
             <ImageView
-                android:scaleType="centerInside"
                 android:id="@+id/iv_ContentsImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:adjustViewBounds="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
                 android:src="@drawable/ic_launcher_foreground"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +125,7 @@
                 android:id="@+id/tv_ViewMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="더보기"
+                android:text="@string/text_ViewMore"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/tv_Description"
                 app:layout_constraintTop_toBottomOf="@id/tv_Description" />
@@ -131,11 +134,10 @@
                 android:id="@+id/tv_CloseDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="접기"
+                android:text="@string/text_ViewClose"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/tv_Description"
                 app:layout_constraintTop_toBottomOf="@id/tv_Description" />
-
 
 
             <ImageView
@@ -177,12 +179,12 @@
     </ScrollView>
 
     <EditText
-        android:background="@drawable/bg_input_box"
-        android:hint="댓글달기"
         android:id="@+id/et_Comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_input_box"
+        android:hint="@string/et_commentHint"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/iv_Send"

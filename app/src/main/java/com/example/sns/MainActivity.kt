@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -90,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
 
+        // SignInActivity에서 이름, 이메일 받아오도록
         getName = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
@@ -161,8 +163,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+        val userName_data = intent.getStringExtra("name_DataFromSignUpActivity")
         val intent = Intent(this, DetailActivity::class.java).apply {
             putExtra("user", postContents)
+            putExtra("name_DataFromSignUpActivity",userName_data)
         }
         startActivity(intent)
     }
