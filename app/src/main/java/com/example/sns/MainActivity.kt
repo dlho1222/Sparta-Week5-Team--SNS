@@ -22,23 +22,23 @@ class MainActivity : AppCompatActivity() {
 
 
         val profile1 = findViewById<ImageView>(R.id.iv_profile1_con).setOnClickListener {
-            goToDetail(it, UserList.get(0))
+            goToDetail(it, PostList.get(0))
         }
 
         val profile2 = findViewById<ImageView>(R.id.iv_profile2_con).apply {
             setOnClickListener {
-                goToDetail(it, UserList.get(1))
+                goToDetail(it, PostList.get(1))
             }
         }
         val profile3 = findViewById<ImageView>(R.id.iv_profile3_con).apply {
             setOnClickListener {
-                goToDetail(it, UserList.get(2))
+                goToDetail(it, PostList.get(2))
             }
         }
 
         val profile4 = findViewById<ImageView>(R.id.iv_profile4_con).apply {
             setOnClickListener {
-                goToDetail(it, UserList.get(3))
+                goToDetail(it, PostList.get(3))
             }
         }
 
@@ -115,10 +115,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToDetail(view: View, UserContents: User) {
+    private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, DetailActivity::class.java).apply {
-            putExtra("user", UserContents)
+            putExtra("user", postContents)
         }
         startActivity(intent)
     }

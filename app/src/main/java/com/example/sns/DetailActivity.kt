@@ -1,6 +1,5 @@
 package com.example.sns
 
-import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.EditText
@@ -8,13 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.edit
 import androidx.core.view.isVisible
 
 class DetailActivity : AppCompatActivity() {
     private var isHeart = false //좋아요 상태
     private var saveComment = ""
-    private var userInfo: User? = null
+    private var postInfo: Post? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -22,11 +20,10 @@ class DetailActivity : AppCompatActivity() {
         val ivComment = findViewById<ImageView>(R.id.iv_AddComment)
         val etComment = findViewById<EditText>(R.id.et_Comment)
         val ivHeart = findViewById<ImageView>(R.id.iv_Heart)
-        val ivEmptyHeart = findViewById<ImageView>(R.id.iv_EmptyHeart)
 
-        userInfo = intent.getParcelableExtra<User>("user")
+        postInfo = intent.getParcelableExtra<Post>("user")
 
-
+        isHeart = postInfo?.isLike ?: false
 
         toolBar.apply {
             title = "Detail"
@@ -34,11 +31,12 @@ class DetailActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
         val ivContents = findViewById<ImageView>(R.id.iv_ContentsImage).apply {
-            userInfo?.contentsImage?.let { setImageResource(it) }
+            postInfo?.contentsImage?.let { setImageResource(it) }
         }
         val ivProfile = findViewById<ImageView>(R.id.iv_Profile).apply {
-            userInfo?.profile?.let { setImageResource(it) }
+            postInfo?.profile?.let { setImageResource(it) }
         }
 
 
@@ -46,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
             //addCommentDialog()
             showCommentWindow()
         }
-        val ivSend = findViewById<ImageView>(R.id.iv_Send)?.apply {
+        val ivSend = findViewById<ImageView>(R.id.iv_Send)?.apply {//댓글 입력하는 역할
             setOnClickListener {
                 if (etComment.text.isNullOrEmpty() || etComment.text.trim() == "") return@setOnClickListener
                 addComment(etComment.text.toString())
@@ -55,16 +53,15 @@ class DetailActivity : AppCompatActivity() {
         }
 
 
+        changeIcon(isHeart,ivHeart)
+
         ivHeart.setOnClickListener {
-            changeIcon(isHeart, ivHeart)
-        }
-        ivEmptyHeart.setOnClickListener {
             changeIcon(isHeart, ivHeart)
         }
 
         setDescription() //Description 셋팅   
 
-        val comment = userInfo?.comment
+        val comment = postInfo?.comment
 
         val tvComment = findViewById<TextView>(R.id.tv_Comment).apply {
             text = comment
@@ -74,18 +71,20 @@ class DetailActivity : AppCompatActivity() {
 
     private fun changeIcon(isHeart: Boolean, heartImage: ImageView) { // 아이콘 변경
         this.isHeart = !isHeart
-        heartImage.isVisible = this.isHeart
+        heartImage.setImageResource(
+            if (isHeart) R.drawable.heart else R.drawable.emptyheart
+        )
+
     }
 
     private fun setDescription() {
 
-        val description = userInfo?.description
+        val description = postInfo?.description
         val tvDescription = findViewById<TextView>(R.id.tv_Description).apply {
             text = description
         } // 설명
         val view_more = findViewById<TextView>(R.id.tv_ViewMore) // 더보기
         val close_Text = findViewById<TextView>(R.id.tv_CloseDescription) //접기
-
 
         setViewMore(tvDescription, view_more, close_Text)
     }
@@ -93,7 +92,6 @@ class DetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean { //백버튼 구현
         return when (item.itemId) {
             android.R.id.home -> {
-                saveData()
                 finish()
                 true
             }
@@ -120,7 +118,7 @@ class DetailActivity : AppCompatActivity() {
 //    }
     private fun addComment(text: String) { //댓글 달기
 
-        val id = userInfo?.id
+        val id = postInfo?.id
         val tvComment = findViewById<TextView>(R.id.tv_Comment)
         saveComment += "[$id]  $text\n"
 
@@ -164,36 +162,4 @@ class DetailActivity : AppCompatActivity() {
         iv_Send.isVisible = !iv_Send.isVisible
     }
 
-    override fun onResume() {
-        getSaveData()
-        super.onResume()
-    }
-
-    override fun onDestroy() {
-        saveData()
-        super.onDestroy()
-    }
-
-    private fun saveData() { // 데이터 저장
-        getSharedPreferences(USER_INFO, Context.MODE_PRIVATE).edit {
-            putBoolean("isHeart", isHeart)
-            putString("saveComment", saveComment)
-            //clear()
-            //remove("saveComment")
-            apply()
-        }
-    }
-
-    private fun getSaveData() { //저장된 데이터 가져오기
-        val tvComment = findViewById<TextView>(R.id.tv_Comment)
-        getSharedPreferences(USER_INFO, Context.MODE_PRIVATE)?.run {
-            isHeart = getBoolean("isHeart", false)
-            saveComment = getString("saveComment", "").toString()
-            //saveComment = ""
-        }
-        val ivHeart = findViewById<ImageView>(R.id.iv_Heart)
-        val ivEmptyHeart = findViewById<ImageView>(R.id.iv_EmptyHeart)
-        if (isHeart) ivHeart.isVisible = true else ivEmptyHeart.isVisible = true
-        tvComment.append(saveComment)
-    }
 }
