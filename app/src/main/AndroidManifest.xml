@@ -22,7 +22,9 @@
             android:name=".MypageActivity"
             android:exported="false">
         </activity>
-
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
