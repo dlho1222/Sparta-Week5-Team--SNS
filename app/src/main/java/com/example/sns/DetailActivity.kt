@@ -111,7 +111,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun addComment(text: String) { //댓글 달기
-        val id = intent.getStringExtra("name_DataFromSignUpActivity")
+        val id = intent.getStringExtra("id")
         //val id = postInfo?.id
         val tvComment = findViewById<TextView>(R.id.tv_Comment)
         saveComment += "[$id]  $text\n"

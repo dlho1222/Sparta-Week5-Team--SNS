@@ -2,7 +2,6 @@ package com.example.sns
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -33,12 +32,12 @@ class SignInActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
-                val userName = it.data?.getStringExtra(getString(R.string.intent_data_userName)) ?: ""
+                val userName = it.data?.getStringExtra("id") ?: ""
                 val userEmail = it.data?.getStringExtra(getString(R.string.intent_data_userEmail)) ?: ""
                 val userPw = it.data?.getStringExtra(getString(R.string.intent_data_userPw)) ?: ""
 
                 val intent = Intent(this, MainActivity::class.java).apply {
-                    putExtra(getString(R.string.intent_data_userName), userName)
+                    putExtra("id", userName)
                 }
                 setResult(RESULT_OK, intent)
 

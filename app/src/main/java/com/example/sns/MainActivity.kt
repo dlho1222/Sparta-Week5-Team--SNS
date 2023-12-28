@@ -7,7 +7,6 @@ import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -117,10 +116,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-        val userName_data = intent.getStringExtra("name_DataFromSignUpActivity")
+        val userName_data = intent.getStringExtra("id")
         val intent = Intent(this, DetailActivity::class.java).apply {
             putExtra("user", postContents)
-            putExtra("name_DataFromSignUpActivity",userName_data)
+            putExtra("id",userName_data)
         }
         startActivity(intent)
     }
