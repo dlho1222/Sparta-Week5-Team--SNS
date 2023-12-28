@@ -2,17 +2,27 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0e7d6dddbd3a36ed6c615c99f9601541477dd393
     <targetSelectedWithDropDown>
       <Target>
         <type value="QUICK_BOOT_TARGET" />
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
+<<<<<<< HEAD
+            <value value="C:\Users\YG\.android\avd\Pixel_7_API_33.avd" />
+=======
             <value value="C:\Users\asdfg\.android\avd\Pixel_7_API_33_2nd.avd" />
+>>>>>>> 0e7d6dddbd3a36ed6c615c99f9601541477dd393
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
+    <timeTargetWasSelectedWithDropDown value="2023-12-28T06:16:10.329657700Z" />
+=======
     <timeTargetWasSelectedWithDropDown value="2023-12-28T03:06:36.402887200Z" />
 =======
     <value>
@@ -21,5 +31,6 @@
       </entry>
     </value>
 >>>>>>> ab9756db0f047e2a028d07ec751c890825b3dfcf
+>>>>>>> 0e7d6dddbd3a36ed6c615c99f9601541477dd393
   </component>
 </project>
