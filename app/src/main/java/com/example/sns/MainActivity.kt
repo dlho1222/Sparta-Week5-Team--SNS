@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -39,6 +40,12 @@ class MainActivity : AppCompatActivity() {
         val profile4 = findViewById<ImageView>(R.id.iv_profile4_con).apply {
             setOnClickListener {
                 goToDetail(it, PostList.get(3))
+            }
+        }
+
+        val goTomyPage = findViewById<TextView>(R.id.tv_signedIn).apply {
+            setOnClickListener {
+                goToMyPage(it)
             }
         }
 
@@ -125,8 +132,13 @@ class MainActivity : AppCompatActivity() {
 
     fun goToMyPage(view: View) {
         //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+        var userEmail = intent.getStringExtra("userEmail_DataFromSignUpActivity")
+        var userInfo = UserInfoList.findUserInfoWithEmail(userEmail)
 
-        val intent = Intent(this, MypageActivity::class.java)
+        Log.d("test", "userinfo = ${userInfo} , email= ${userEmail}")
+        val intent = Intent(this, MypageActivity::class.java).apply{
+            putExtra(USER_INFO,userInfo)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
     }

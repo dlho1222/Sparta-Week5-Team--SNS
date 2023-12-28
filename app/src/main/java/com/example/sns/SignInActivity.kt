@@ -39,6 +39,7 @@ class SignInActivity : AppCompatActivity() {
 
                 val intent = Intent(this, MainActivity::class.java).apply {
                     putExtra("userName_DataFromSignUpActivity", userName)
+                    putExtra("userEmail_DataFromSignUpActivity",userEmail)
                 }
                 setResult(RESULT_OK, intent)
 

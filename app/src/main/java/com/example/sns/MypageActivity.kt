@@ -22,6 +22,9 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 
 class MypageActivity : AppCompatActivity() {
+
+    private var userInfo : UserInfo? = null
+
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
@@ -38,6 +41,24 @@ class MypageActivity : AppCompatActivity() {
         val delPost1 = findViewById<ImageView>(R.id.iv_deleteIcon1)
         val delPost2 = findViewById<ImageView>(R.id.iv_deleteIcon2)
         val delPost3 = findViewById<ImageView>(R.id.iv_deleteIcon3)
+
+        userInfo = intent.getParcelableExtra("userInfo")
+
+        userInfo?.profileImg?.let {
+            ivProfilePic.setImageResource(it) }
+
+        userInfo?.name?.let{
+            findViewById<TextView>(R.id.tv_mypageName).text = it  }
+
+        userInfo?.comment?.let{
+            findViewById<TextView>(R.id.tv_mypageComment).text = it }
+
+        userInfo?.mbti?.let{
+            findViewById<TextView>(R.id.tv_mbti).text = it }
+
+        userInfo?.hobby?.let{
+            findViewById<TextView>(R.id.tv_hobby).text = it }
+
         ivProfilePic.setOnClickListener {
             openGallery()
         }
