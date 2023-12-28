@@ -4,7 +4,11 @@
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 >>>>>>> 969a95486a9b3a71f2416f67f8805322d856c891
+<<<<<<< HEAD
+>>>>>>> 23707ac07965604b9b054e8d65f088cbf2db1323
+=======
 >>>>>>> e627b728decdded4d0ef416baafca9bd8335a020
+>>>>>>> 82c5e885ef9f4999b9ef4cfce6b8f6f8ae35a1b5
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">

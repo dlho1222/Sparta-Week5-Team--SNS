@@ -2,16 +2,12 @@ package com.example.sns
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +15,28 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val profile1 = findViewById<ImageView>(R.id.iv_profile1_con).setOnClickListener {
+            goToDetail(it, UserList.get(0))
+        }
+
+        val profile2 = findViewById<ImageView>(R.id.iv_profile2_con).apply {
+            setOnClickListener {
+                goToDetail(it, UserList.get(1))
+            }
+        }
+        val profile3 = findViewById<ImageView>(R.id.iv_profile3_con).apply {
+            setOnClickListener {
+                goToDetail(it, UserList.get(2))
+            }
+        }
+
+        val profile4 = findViewById<ImageView>(R.id.iv_profile4_con).apply {
+            setOnClickListener {
+                goToDetail(it, UserList.get(3))
+            }
+        }
 
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
@@ -44,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             btn_signIn.visibility = View.VISIBLE
             tv_name.visibility = View.INVISIBLE
         }
+
 
         /*
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -85,8 +104,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //클릭 리스너로 사용하는 방법을 생각해 볼 것
-
+    private fun goToDetail(view: View, UserContents: User) {
+        //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetailActivity::class.java).apply {
+            putExtra("user", UserContents)
+        }
+        startActivity(intent)
+    }
 
     fun goToMyPage(view: View) {
         //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
@@ -95,7 +119,14 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
     }
-
-
 }
+
+
+
+
+
+
+
+
+
 

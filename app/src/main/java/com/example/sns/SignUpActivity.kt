@@ -1,15 +1,11 @@
 package com.example.sns
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import java.util.regex.Pattern
+import androidx.appcompat.app.AppCompatActivity
 
 class SignUpActivity : AppCompatActivity() {
     override fun onBackPressed() {
@@ -47,16 +43,12 @@ class SignUpActivity : AppCompatActivity() {
             ) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
             } else {
-<<<<<<< HEAD
-                // 이름 데이터 값 MainActivity에 넘기기
-                val intent = Intent(this, SignUpActivity::class.java)
-                intent.putExtra("name", userName_data)
-=======
+
                 // 이름 데이터 값 SignInActivity에 넘기기
                 val intent = Intent(this, SignInActivity::class.java)
                 intent.putExtra("name_DataFromSignUpActivity", userName_data)
 //                Log.d("SignUpActivity", "name : $userName_data")
->>>>>>> 294dddc2cf8be14551417b768d10d32c673b119c
+
 
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
                 startActivity(intent)
