@@ -20,6 +20,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val tvrep1_1: TextView = findViewById(R.id.tv_profile1_desc)
+        val tvrep1_2: TextView = findViewById(R.id.tv_profile1_comm)
+        val tvrep1_3: TextView = findViewById(R.id.tv_profile1_id)
+        val tvrep1_4: ImageView = findViewById(R.id.iv_profile1_con)
+        val tvrep1_5: ImageView = findViewById(R.id.iv_profile1)
+
+        if (contentList.isNotEmpty()) {
+            val firstContent = contentList[0]
+            tvrep1_1.text = "[${firstContent.id}]  ${firstContent.description}"
+            tvrep1_2.text = "${firstContent.comment}"
+            tvrep1_3.text = "${firstContent.id}"
+            tvrep1_4.setImageResource(firstContent.img)
+            tvrep1_5.setImageResource(firstContent.profile)
+        }
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
