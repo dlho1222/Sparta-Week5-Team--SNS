@@ -38,6 +38,18 @@ class DetailActivity : AppCompatActivity() {
         val ivProfile = findViewById<ImageView>(R.id.iv_Profile).apply {
             postInfo?.profile?.let { setImageResource(it) }
         }
+        val yourdetail1 = findViewById<TextView>(R.id.tv_EngName).apply {
+            postInfo?.EngName?.let { setText(it) }
+        }
+        val yourdetail2 = findViewById<TextView>(R.id.tv_KR_Name).apply {
+            postInfo?.KR_Name?.let { setText(it) }
+        }
+        val yourdetail3 = findViewById<TextView>(R.id.tv_MBTI).apply {
+            postInfo?.MBTI?.let { setText("MBTI : $it") }
+        }
+        val yourdetail4 = findViewById<TextView>(R.id.tv_Status).apply {
+            postInfo?.Status?.let { setText(it) }
+        }
 
 
         ivComment.setOnClickListener {//코멘트 아이콘 눌렀을 때 commentwindow 보여줌

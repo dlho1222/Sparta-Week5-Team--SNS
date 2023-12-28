@@ -10,5 +10,9 @@ data class Post(
     val description: String,
     val id: String,
     val comment: String,
+    val EngName: String,
+    val KR_Name: String,
+    val MBTI: String,
+    val Status: String,
     var isLike : Boolean = false
 ) : Parcelable

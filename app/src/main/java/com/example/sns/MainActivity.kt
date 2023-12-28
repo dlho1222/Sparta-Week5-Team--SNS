@@ -20,6 +20,50 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val rep1_1 = findViewById<ImageView>(R.id.iv_profile1)
+        rep1_1.setImageResource(PostList.get(0).profile)
+        val rep1_2: TextView = findViewById(R.id.tv_profile1_id)
+        rep1_2.text = "${PostList.get(0).id}"
+        val rep1_3: ImageView = findViewById(R.id.iv_profile1_con)
+        rep1_3.setImageResource(PostList.get(0).contentsImage)
+        val rep1_4: TextView = findViewById(R.id.tv_profile1_desc)
+        rep1_4.text = "[${PostList.get(0).id}]  ${PostList.get(0).description}"
+        val rep1_5: TextView = findViewById(R.id.tv_profile1_comm)
+        rep1_5.text = "${PostList.get(0).comment}"
+
+        val rep2_1: ImageView = findViewById(R.id.iv_profile2)
+        rep2_1.setImageResource(PostList.get(1).profile)
+        val rep2_2: TextView = findViewById(R.id.tv_profile2_id)
+        rep2_2.text = "${PostList.get(1).id}"
+        val rep2_3: ImageView = findViewById(R.id.iv_profile2_con)
+        rep2_3.setImageResource(PostList.get(1).contentsImage)
+        val rep2_4: TextView = findViewById(R.id.tv_profile2_desc)
+        rep2_4.text = "[${PostList.get(1).id}]  ${PostList.get(1).description}"
+        val rep2_5: TextView = findViewById(R.id.tv_profile2_comm)
+        rep2_5.text = "${PostList.get(1).comment}"
+
+        val rep3_1: ImageView = findViewById(R.id.iv_profile3)
+        rep3_1.setImageResource(PostList.get(2).profile)
+        val rep3_2: TextView = findViewById(R.id.tv_profile3_id)
+        rep3_2.text = "${PostList.get(2).id}"
+        val rep3_3: ImageView = findViewById(R.id.iv_profile3_con)
+        rep3_3.setImageResource(PostList.get(2).contentsImage)
+        val rep3_4: TextView = findViewById(R.id.tv_profile3_desc)
+        rep3_4.text = "[${PostList.get(2).id}]  ${PostList.get(2).description}"
+        val rep3_5: TextView = findViewById(R.id.tv_profile3_comm)
+        rep3_5.text = "${PostList.get(2).comment}"
+
+        val rep4_1: ImageView = findViewById(R.id.iv_profile4)
+        rep4_1.setImageResource(PostList.get(3).profile)
+        val rep4_2: TextView = findViewById(R.id.tv_profile4_id)
+        rep4_2.text = "${PostList.get(3).id}"
+        val rep4_3: ImageView = findViewById(R.id.iv_profile4_con)
+        rep4_3.setImageResource(PostList.get(3).contentsImage)
+        val rep4_4: TextView = findViewById(R.id.tv_profile4_desc)
+        rep4_4.text = "[${PostList.get(3).id}]  ${PostList.get(3).description}"
+        val rep4_5: TextView = findViewById(R.id.tv_profile4_comm)
+        rep4_5.text = "${PostList.get(3).comment}"
+
 
         val profile1 = findViewById<ImageView>(R.id.iv_profile1_con).setOnClickListener {
             goToDetail(it, PostList.get(0))
