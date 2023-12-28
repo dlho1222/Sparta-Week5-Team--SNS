@@ -1,8 +1,7 @@
 package com.example.sns
 
-const val USER_INFO = "user_info"
-const val PROFILE = "profile"
-const val CONTENTS_IMAGE = "contents_image"
+const val POST_INFO = "post_info"
 const val ID = "id"
-const val COMMENT = "comment"
-const val DESCRIPTION = "description"
+const val USER_NAME = "userName_DataFromSignUpActivity"
+const val USER_EMAIL = "userEmail_DataFromSignUpActivity"
+const val USER_PASSWORD = "userPw_DataFromSignUpActivity"

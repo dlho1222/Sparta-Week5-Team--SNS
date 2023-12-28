@@ -23,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
 
 
 
-        postInfo = intent.getParcelableExtra<Post>("user")
+        postInfo = intent.getParcelableExtra<Post>(POST_INFO)
 
         isHeart = postInfo?.isLike ?: false
 
@@ -33,18 +33,24 @@ class DetailActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val tvEngName = findViewById<TextView>(R.id.tv_Eng_Name).apply {
-            text = postInfo?.engName
-        }
-        val tvName = findViewById<TextView>(R.id.tv_KR_Name).apply {
-            text = postInfo?.krName
-        }
 
         val ivContents = findViewById<ImageView>(R.id.iv_ContentsImage).apply {
             postInfo?.contentsImage?.let { setImageResource(it) }
         }
         val ivProfile = findViewById<ImageView>(R.id.iv_Profile).apply {
             postInfo?.profile?.let { setImageResource(it) }
+        }
+        val yourdetail1 = findViewById<TextView>(R.id.tv_Eng_Name).apply {
+            postInfo?.EngName?.let { setText(it) }
+        }
+        val yourdetail2 = findViewById<TextView>(R.id.tv_KR_Name).apply {
+            postInfo?.KR_Name?.let { setText(it) }
+        }
+        val yourdetail3 = findViewById<TextView>(R.id.tv_MBTI).apply {
+            postInfo?.MBTI?.let { setText("MBTI : $it") }
+        }
+        val yourdetail4 = findViewById<TextView>(R.id.tv_Status).apply {
+            postInfo?.Status?.let { setText(it) }
         }
 
 
@@ -111,8 +117,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun addComment(text: String) { //댓글 달기
-        val id = intent.getStringExtra("name_DataFromSignUpActivity")
-        //val id = postInfo?.id
+        val id = intent.getStringExtra(ID)
         val tvComment = findViewById<TextView>(R.id.tv_Comment)
         saveComment += "[$id]  $text\n"
 
