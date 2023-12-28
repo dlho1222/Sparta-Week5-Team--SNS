@@ -1,16 +1,15 @@
 package com.example.sns
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import org.w3c.dom.Text
 import java.util.regex.Pattern
+import androidx.appcompat.app.AppCompatActivity
 
 class SignUpActivity : AppCompatActivity() {
     override fun onBackPressed() {
@@ -61,6 +60,7 @@ class SignUpActivity : AppCompatActivity() {
                     putExtra("userPw_DataFromSignUpActivity", userPw_data)
                 }
                 setResult(RESULT_OK, intent)
+
                 Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
                 finish()
             }
