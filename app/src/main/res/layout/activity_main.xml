@@ -84,7 +84,6 @@
                         android:id="@+id/iv_reels1"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
-                        android:onClick="goToMyPage"
                         android:src="@drawable/swings"
                         app:civ_border_color="#FF9147"
                         app:civ_border_width="2dp"
