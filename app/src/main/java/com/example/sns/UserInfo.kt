@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class UserInfo(
-    val email: String,
-    val name: String,
-    val password: String,
+    var email: String,
+    var name: String,
+    var password: String,
     var comment: String,
     var hobby: String,
     var mbti: String,
