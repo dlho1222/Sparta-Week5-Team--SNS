@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var getName: ActivityResultLauncher<Intent>
     private var id = ""
+    private var email=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -86,6 +88,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val goTomyPage = findViewById<TextView>(R.id.tv_signedIn).apply {
+            setOnClickListener {
+                goToMyPage(it)
+            }
+        }
+
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
@@ -97,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             if (it.resultCode == RESULT_OK) {
                 val userName = it.data?.getStringExtra(USER_NAME) ?: ""
                 id = userName
+                email = it.data?.getStringExtra(EMAIL) ?: ""
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
                 tv_name.visibility = View.VISIBLE
@@ -171,8 +180,11 @@ class MainActivity : AppCompatActivity() {
 
     fun goToMyPage(view: View) {
         //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+        var userInfo = UserInfoList.findUserInfoWithEmail(email)
 
-        val intent = Intent(this, MypageActivity::class.java)
+        val intent = Intent(this, MypageActivity::class.java).apply{
+            putExtra(USER_INFO,userInfo)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
     }
