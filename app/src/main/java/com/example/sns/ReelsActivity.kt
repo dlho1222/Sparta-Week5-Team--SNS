@@ -1,5 +1,6 @@
 package com.example.sns
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -36,6 +37,14 @@ class ReelsActivity : AppCompatActivity() {
         val tvProfile = findViewById<TextView>(R.id.tv_profile_id).apply {
             reelsInfo?.id?.let { setText(it) }
         }
+        val reelsid = findViewById<TextView>(R.id.tv_profile_id)
+        reelsid.setShadowLayer(10f, 1f, 1f, Color.GRAY)
+        /*
+        두 가지의 방법이 있는데 findViewById로 불러와 적용하는 방법
+        xml에서 Shadow에 값을 주는 방법
+        https://mine-it-record.tistory.com/245
+        */
+
 
     }
 
