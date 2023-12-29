@@ -25,8 +25,10 @@
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,13 +74,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-<<<<<<< HEAD
                     android:text="@string/mypage_name"
-                    android:textColor="@color/black"
-=======
-                    android:text="이름"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/iv_editname"
                     app:layout_constraintStart_toEndOf="@+id/iv_profilePic"
@@ -92,13 +89,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     android:background="#eeeeee"
-<<<<<<< HEAD
                     android:text="@string/mypage_etname"
-                    android:visibility="gone"
-=======
-                    android:paddingTop="0dp"
-                    android:text="이름"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:visibility="gone"
@@ -114,13 +105,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:paddingTop="5dp"
-<<<<<<< HEAD
                     android:text="@string/mypage_greeting"
-                    android:textColor="@color/black"
-=======
-                    android:text="간단한 자기소개 쓰기\n\n\n\n\n\n"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -134,13 +120,9 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:background="#eeeeee"
-<<<<<<< HEAD
-                    android:text="@string/mypage_etgreeting"
-=======
                     android:paddingTop="0dp"
-                    android:text="간단한 자기소개 쓰기\n\n\n\n\n\n"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
-                    android:textColor="@color/black"
+                    android:text="@string/mypage_greeting"
+                    android:textColor="@color/defaultWidgetColor"
                     android:textSize="14sp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -154,9 +136,9 @@
                     android:layout_height="25dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/edit"
-                    android:tint="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toStartOf="@+id/iv_nameok"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
                 <ImageView
                     android:id="@+id/iv_nameok"
@@ -190,9 +172,9 @@
                     android:layout_height="25dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/edit"
-                    android:tint="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toStartOf="@+id/iv_mbtiHobbyOk"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
                 <ImageView
                     android:id="@+id/iv_mbtiHobbyOk"
@@ -210,12 +192,8 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-<<<<<<< HEAD
                     android:text="@string/mypage_mbtiType"
-=======
-                    android:text="성격유형 :"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -226,12 +204,8 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-<<<<<<< HEAD
                     android:text="@string/mypage_mbti"
-=======
-                    android:text="INFP"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -246,12 +220,9 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:background="#eeeeee"
-<<<<<<< HEAD
-                    android:text="@string/mypage_etMbti"
-=======
                     android:padding="0dp"
-                    android:text="INFP"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
+                    android:text="@string/mypage_etMbti"
+                    android:textColor="@color/defaultWidgetColor"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:visibility="gone"
@@ -264,12 +235,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-<<<<<<< HEAD
                     android:text="@string/mypage_hobbyTitle"
-=======
-                    android:text="취미:"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_mbtiType" />
@@ -282,14 +249,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:maxLines="2"
-<<<<<<< HEAD
-
                     android:text="@string/mypage_hobby"
-=======
-                    android:text="등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기 "
-
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -307,7 +268,7 @@
                     android:ellipsize="end"
                     android:maxLines="2"
                     android:padding="0dp"
-                    android:text="@string/mypage_etHobby"
+                    android:text="@string/mypage_hobby"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:visibility="gone"
@@ -331,7 +292,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -352,12 +313,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -384,12 +341,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -415,12 +368,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -446,12 +395,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -477,12 +422,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -508,12 +449,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -539,12 +476,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
                             android:text="@string/mypage_friendName"
-=======
-                            android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -570,7 +503,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <TextView
@@ -658,18 +591,18 @@
                             android:layout_height="25dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/edit"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toStartOf="@+id/iv_deleteIcon1"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_deleteIcon1"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/garbage"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/imageView11"
@@ -687,12 +620,8 @@
                             android:layout_height="45dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-<<<<<<< HEAD
                             android:text="@string/mypage_postContent"
-=======
-                            android:text="본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -712,14 +641,8 @@
                             android:id="@+id/tv_myppageContTitle2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-<<<<<<< HEAD
                             android:text="@string/mypage_postName"
-=======
-                            android:layout_marginStart="4dp"
-                            android:layout_marginTop="40dp"
-                            android:text="글제목이다아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -729,19 +652,18 @@
                             android:layout_height="25dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/edit"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toStartOf="@+id/iv_deleteIcon2"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_deleteIcon2"
-
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/garbage"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_ContPic"
@@ -760,13 +682,8 @@
                             android:layout_marginTop="10dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-<<<<<<< HEAD
-                            android:layout_marginTop="10dp"
                             android:text="@string/mypage_postContent"
-=======
-                            android:text="본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -786,12 +703,8 @@
                             android:id="@+id/tv_myppageContTitle3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-<<<<<<< HEAD
                             android:text="@string/mypage_postName"
-=======
-                            android:text="글제목이다아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -801,18 +714,18 @@
                             android:layout_height="25dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/edit"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toStartOf="@+id/iv_deleteIcon3"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_deleteIcon3"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/garbage"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_ContPic3"
@@ -828,14 +741,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-<<<<<<< HEAD
                             android:text="@string/mypage_postContent"
-=======
-                            android:text="본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
