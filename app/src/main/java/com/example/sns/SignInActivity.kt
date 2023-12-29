@@ -53,6 +53,8 @@ class SignInActivity : AppCompatActivity() {
 
         // 로그인 버튼 클릭 시 MainActivity로 전환
         btn_login.setOnClickListener {
+            val userEmailInfo = UserInfoList.findUserInfoWithEmail(user_Email.text.toString())
+            val userName = UserInfoList.findNameWithEmail(user_Email.text.toString())
 
             // 입력받은 이메일, 비밀번호 데이터 값
             val userEmail_data = user_Email.text.toString()
@@ -60,6 +62,12 @@ class SignInActivity : AppCompatActivity() {
 
             if (userEmail_data.trim().isEmpty() || userPw_data.trim().isEmpty()) {
                 Toast.makeText(this, getString(R.string.toast_msg_idpwNoInput), Toast.LENGTH_SHORT).show()
+            } else if(userEmailInfo != null) {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(USER_NAME, userName)
+
+                setResult(RESULT_OK, intent)
+                finish()
             } else {
                 finish()
             }

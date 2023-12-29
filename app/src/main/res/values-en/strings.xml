@@ -22,4 +22,7 @@
     <string name="toast_msg_notEmailForm">
 Please follow the input email format.</string>
     <string name="toast_msg_signUp">Success Signup</string>
+    <string name="toast_msg_impossibleEmail">This email is already in use</string>
+    <string name="toast_msg_possibleEmail">This email is available</string>
+    <string name="toast_msg_checkEmail">Please check your email</string>
 </resources>

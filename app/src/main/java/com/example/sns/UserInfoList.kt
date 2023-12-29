@@ -72,4 +72,11 @@ object UserInfoList {
             it.email == email
         }
     }
+
+    fun findNameWithEmail(email:String?) : String {
+        val index = list.indexOfFirst {
+            it.email == email
+        }
+        return list[index].name
+    }
 }

@@ -21,4 +21,7 @@
     <string name="toast_msg_noInput">입력되지 않은 정보가 있습니다</string>
     <string name="toast_msg_notEmailForm">이메일 형식을 지켜주세요</string>
     <string name="toast_msg_signUp">회원가입 성공!</string>
+    <string name="toast_msg_impossibleEmail">이미 사용중인 이메일입니다</string>
+    <string name="toast_msg_possibleEmail">사용 가능한 이메일입니다</string>
+    <string name="toast_msg_checkEmail">이메일 중복체크를 해주세요</string>
 </resources>
