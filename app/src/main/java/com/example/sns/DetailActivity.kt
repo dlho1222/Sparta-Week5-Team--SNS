@@ -12,6 +12,11 @@ import androidx.core.view.isVisible
 class DetailActivity : AppCompatActivity() {
     private var isHeart = false //좋아요 상태
     private var postInfo: Post? = null
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.get_none_trans, R.anim.get_slide_out_trans)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)

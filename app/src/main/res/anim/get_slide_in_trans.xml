@@ -3,27 +3,15 @@
 
     <translate
         android:duration="500"
-        android:fromYDelta="0%"
-        android:toYDelta="100%" />
+        android:fromXDelta="100%"
+        android:toXDelta="0%" />
+    <alpha
+        android:duration="400"
+        android:fromAlpha="0"
+        android:toAlpha="1" />
 
 </set>
 
-<!--<translate
-android:duration="400"
-android:fromYDelta="0%"
-android:toYDelta="60%" />
-<scale
-android:duration="200"
-android:fromXScale="1"
-android:fromYScale="1"
-android:pivotX="50%"
-android:pivotY="50%"
-android:toXScale="0.9"
-android:toYScale="0.9" />
-<alpha
-android:duration="200"
-android:fromAlpha="1"
-android:toAlpha="0.4" />-->
 
 
     <!-- 참고 링크: https://greedy0110.tistory.com/52 -->

@@ -70,6 +70,7 @@ class SignUpActivity : AppCompatActivity() {
             } else if (!check(user_email)) {
                 Toast.makeText(this, getString(R.string.toast_msg_notEmailForm), Toast.LENGTH_SHORT).show()
             } else {
+
                 // 이름 데이터 값 SignInActivity에 넘기기
                 val intent = Intent(this, SignInActivity::class.java).apply {
                     putExtra(USER_NAME, userName_data)
