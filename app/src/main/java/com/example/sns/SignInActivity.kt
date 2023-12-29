@@ -45,6 +45,7 @@ class SignInActivity : AppCompatActivity() {
 
                 }
                 setResult(RESULT_OK, intent)
+                Log.d("SignInActivity1","userName : $userName")
 
                 user_Email.setText(userEmail)
                 user_Pw.setText(userPw)
@@ -62,13 +63,12 @@ class SignInActivity : AppCompatActivity() {
 
             if (userEmail_data.trim().isEmpty() || userPw_data.trim().isEmpty()) {
                 Toast.makeText(this, getString(R.string.toast_msg_idpwNoInput), Toast.LENGTH_SHORT).show()
-            } else if(userEmailInfo != null) {
-                val intent = Intent(this, MainActivity::class.java)
+            } else {
+                val intent = Intent()
                 intent.putExtra(USER_NAME, userName)
 
                 setResult(RESULT_OK, intent)
-                finish()
-            } else {
+                Log.d("SignInActivity2","userName : $userName")
                 finish()
             }
         }

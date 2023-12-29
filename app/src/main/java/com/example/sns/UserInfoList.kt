@@ -61,7 +61,7 @@ object UserInfoList {
         return list[index]
     }
 
-    private fun add(userInfo: UserInfo) {
+    fun add(userInfo: UserInfo) {
         list.add(userInfo)
     }
     fun delete(index: Int){

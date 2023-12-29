@@ -78,7 +78,12 @@ class SignUpActivity : AppCompatActivity() {
                 }
                 setResult(RESULT_OK, intent)
 
+                Log.d("SignUpActivity","userName : $userName_data")
+
                 Toast.makeText(this, getString(R.string.toast_msg_signUp), Toast.LENGTH_SHORT).show()
+
+                UserInfoList.add(UserInfo(userEmail_data,userName_data,userPw_data, "", "", "",R.drawable.testimg))
+
                 finish()
             }
         }
