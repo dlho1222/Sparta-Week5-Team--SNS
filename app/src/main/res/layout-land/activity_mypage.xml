@@ -11,12 +11,21 @@
         android:layout_height="wrap_content"
         android:background="#333333"
         android:padding="15dp"
-        android:text="@string/mypage_title"
+        android:text="커피4조"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:text="프로필 수정"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,10 +55,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/iv_profilePic"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
+                    android:background="@drawable/circle"
+                    android:clipToOutline="true"
                     android:src="@drawable/ppic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -72,13 +83,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-<<<<<<< HEAD
-                    android:text="@string/mypage_name"
-                    android:textColor="@color/black"
-=======
                     android:text="이름"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/iv_editname"
                     app:layout_constraintStart_toEndOf="@+id/iv_profilePic"
@@ -92,13 +98,8 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     android:background="#eeeeee"
-<<<<<<< HEAD
-                    android:text="@string/mypage_etname"
-                    android:visibility="gone"
-=======
                     android:paddingTop="0dp"
                     android:text="이름"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:visibility="gone"
@@ -114,13 +115,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:paddingTop="5dp"
-<<<<<<< HEAD
-                    android:text="@string/mypage_greeting"
-                    android:textColor="@color/black"
-=======
                     android:text="간단한 자기소개 쓰기\n\n\n\n\n\n"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -134,12 +130,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:background="#eeeeee"
-<<<<<<< HEAD
-                    android:text="@string/mypage_etgreeting"
-=======
                     android:paddingTop="0dp"
                     android:text="간단한 자기소개 쓰기\n\n\n\n\n\n"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:visibility="gone"
@@ -210,12 +202,8 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-<<<<<<< HEAD
-                    android:text="@string/mypage_mbtiType"
-=======
                     android:text="성격유형 :"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -226,12 +214,8 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-<<<<<<< HEAD
-                    android:text="@string/mypage_mbti"
-=======
                     android:text="INFP"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -246,12 +230,8 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:background="#eeeeee"
-<<<<<<< HEAD
-                    android:text="@string/mypage_etMbti"
-=======
                     android:padding="0dp"
                     android:text="INFP"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:visibility="gone"
@@ -264,12 +244,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-<<<<<<< HEAD
-                    android:text="@string/mypage_hobbyTitle"
-=======
                     android:text="취미:"
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_mbtiType" />
@@ -282,14 +258,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:maxLines="2"
-<<<<<<< HEAD
-
-                    android:text="@string/mypage_hobby"
-=======
                     android:text="등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기 "
 
                     android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -307,7 +278,7 @@
                     android:ellipsize="end"
                     android:maxLines="2"
                     android:padding="0dp"
-                    android:text="@string/mypage_etHobby"
+                    android:text="취미: 등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기 "
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:visibility="gone"
@@ -339,10 +310,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView2"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -352,12 +325,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -370,10 +339,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView3"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             android:textColor="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -384,12 +355,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -402,10 +369,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView4"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -415,12 +384,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -433,10 +398,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView5"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -446,12 +413,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -464,10 +427,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView6"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -477,12 +442,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -495,10 +456,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView7"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -508,12 +471,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -526,10 +485,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imageView8"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:background="@drawable/circle"
+                            android:clipToOutline="true"
                             android:src="@drawable/bg_person2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -539,12 +500,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-<<<<<<< HEAD
-                            android:text="@string/mypage_friendName"
-=======
                             android:text="김경식"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -576,46 +533,46 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/interest_roundsquare"
                         android:gravity="center"
-                        android:text="@string/mypage_interest"
+                        android:text="관심사"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/interest_roundsquare"
                         android:gravity="center"
-                        android:text="@string/mypage_interest3"
+                        android:text="관심사"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/interest_roundsquare"
                         android:gravity="center"
-                        android:text="@string/mypage_interest2"
+                        android:text="등산"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/interest_roundsquare"
                         android:gravity="center"
-                        android:text="@string/mypage_interest4"
+                        android:text="연애"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/interest_roundsquare"
                         android:gravity="center"
-                        android:text="@string/mypage_interest5"
+                        android:text="관심사"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -648,7 +605,7 @@
                             android:id="@+id/textView4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/mypage_postName"
+                            android:text="글제목이다아아아아"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -687,12 +644,8 @@
                             android:layout_height="45dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-<<<<<<< HEAD
-                            android:text="@string/mypage_postContent"
-=======
                             android:text="본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -712,14 +665,10 @@
                             android:id="@+id/tv_myppageContTitle2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-<<<<<<< HEAD
-                            android:text="@string/mypage_postName"
-=======
                             android:layout_marginStart="4dp"
                             android:layout_marginTop="40dp"
                             android:text="글제목이다아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -760,13 +709,8 @@
                             android:layout_marginTop="10dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-<<<<<<< HEAD
-                            android:layout_marginTop="10dp"
-                            android:text="@string/mypage_postContent"
-=======
                             android:text="본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -786,12 +730,8 @@
                             android:id="@+id/tv_myppageContTitle3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-<<<<<<< HEAD
-                            android:text="@string/mypage_postName"
-=======
                             android:text="글제목이다아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -830,12 +770,8 @@
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
                             android:maxLines="2"
-<<<<<<< HEAD
-                            android:text="@string/mypage_postContent"
-=======
                             android:text="본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아"
                             android:textColor="@color/defaultWidgetColor"
->>>>>>> 41451640d47beca5bb79cab1daaac853368bd90f
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
