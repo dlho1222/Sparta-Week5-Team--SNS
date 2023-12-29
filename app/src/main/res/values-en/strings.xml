@@ -22,4 +22,9 @@
     <string name="toast_msg_notEmailForm">
 Please follow the input email format.</string>
     <string name="toast_msg_signUp">Success Signup</string>
+    <string name="teamName">커피4조</string>
+    <string name="conRefresh">No New Content Update</string>
+    <string name="username">Username</string>
+    <string name="description_text">Description text</string>
+    <string name="comment_text">Comment text</string>
 </resources>
