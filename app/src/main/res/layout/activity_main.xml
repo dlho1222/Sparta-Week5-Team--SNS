@@ -38,6 +38,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:textColor="@color/defaultWidgetColor"
                     android:id="@+id/tv_signIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,6 +54,7 @@
                     app:layout_constraintTop_toTopOf="@id/tv_teamLogo" />
 
                 <TextView
+                    android:textColor="@color/defaultWidgetColor"
                     android:id="@+id/tv_signedIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -95,6 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels1"
                         app:layout_constraintStart_toStartOf="@id/iv_reels1"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels1" />
@@ -116,6 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels2"
                         app:layout_constraintStart_toStartOf="@id/iv_reels2"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels2" />
@@ -137,6 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels3"
                         app:layout_constraintStart_toStartOf="@id/iv_reels3"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels3" />
@@ -158,6 +163,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels4"
                         app:layout_constraintStart_toStartOf="@id/iv_reels4"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels4" />
@@ -179,6 +185,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels5"
                         app:layout_constraintStart_toStartOf="@id/iv_reels5"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels5" />
@@ -197,9 +204,11 @@
 
                     <TextView
                         android:id="@+id/tv_reels6"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels6"
                         app:layout_constraintStart_toStartOf="@id/iv_reels6"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels6" />
@@ -218,9 +227,11 @@
 
                     <TextView
                         android:id="@+id/tv_reels7"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels7"
                         app:layout_constraintStart_toStartOf="@id/iv_reels7"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels7" />
@@ -239,9 +250,11 @@
 
                     <TextView
                         android:id="@+id/tv_reels8"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Username"
+                        android:textColor="@color/defaultWidgetColor"
                         app:layout_constraintEnd_toEndOf="@id/iv_reels8"
                         app:layout_constraintStart_toStartOf="@id/iv_reels8"
                         app:layout_constraintTop_toBottomOf="@id/iv_reels8" />
@@ -280,6 +293,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Username"
+                    android:textColor="@color/defaultWidgetColor"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/iv_profile1"
                     app:layout_constraintStart_toEndOf="@id/iv_profile1"
@@ -312,6 +326,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Description text"
+                    android:textColor="@color/defaultWidgetColor"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -324,6 +339,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="4dp"
                     android:text="Comment text"
+                    android:textColor="@color/defaultWidgetColor"
                     android:textSize="13sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_profile1_desc" />
