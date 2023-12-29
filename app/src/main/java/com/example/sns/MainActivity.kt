@@ -177,11 +177,14 @@ class MainActivity : AppCompatActivity() {
                 val userName = it.data?.getStringExtra(USER_NAME) ?: ""
                 id = userName
                 email = it.data?.getStringExtra(EMAIL) ?: ""
+
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
                 tv_name.visibility = View.VISIBLE
             }
         }
+
+        Log.d("HomeActivity","userName : $id")
 
         btn_signIn.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)

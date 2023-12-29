@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
+
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
@@ -25,13 +27,27 @@ class SignUpActivity : AppCompatActivity() {
         val user_email = findViewById<EditText>(R.id.et_signUpEmail)
         val user_pw = findViewById<EditText>(R.id.et_signUpPassword)
 
-        validation(user_name)
-        validation(user_email)
-        validation(user_pw)
+        // 이메일 중복일 때 0, 아닐 때 1을 주고 answer != 0일 때만 액티비티를 넘어갈 수 있도록 함
+        var answer = 0
 
-        //val btn_repeatCheck = findViewById<Button>(R.id.btn_repeatCheck)
+        validation(user_email)
+
+        val btn_repeatCheck = findViewById<Button>(R.id.btn_repeatCheck)
         val btn_cancel = findViewById<Button>(R.id.btn_cancel)
         val btn_done = findViewById<Button>(R.id.btn_done)
+
+        btn_repeatCheck.setOnClickListener {
+            val userInfo = UserInfoList.findUserInfoWithEmail(user_email.text.toString())
+
+            if (userInfo != null) {
+                Toast.makeText(this,getString(R.string.toast_msg_impossibleEmail),Toast.LENGTH_SHORT).show()
+                answer = 0
+            } else {
+                Toast.makeText(this,getString(R.string.toast_msg_possibleEmail),Toast.LENGTH_SHORT).show()
+                answer = 1
+            }
+        }
+
 
         btn_cancel.setOnClickListener {
             Toast.makeText(this, getString(R.string.toast_msg_cancel), Toast.LENGTH_SHORT).show()
@@ -49,6 +65,8 @@ class SignUpActivity : AppCompatActivity() {
                     .isEmpty() || userPw_data.trim().isEmpty()
             ) {
                 Toast.makeText(this, getString(R.string.toast_msg_noInput), Toast.LENGTH_SHORT).show()
+            } else if (answer == 0){
+                Toast.makeText(this,getString(R.string.toast_msg_checkEmail),Toast.LENGTH_SHORT).show()
             } else if (!check(user_email)) {
                 Toast.makeText(this, getString(R.string.toast_msg_notEmailForm), Toast.LENGTH_SHORT).show()
             } else {
@@ -61,7 +79,12 @@ class SignUpActivity : AppCompatActivity() {
                 }
                 setResult(RESULT_OK, intent)
 
+                Log.d("SignUpActivity","userName : $userName_data")
+
                 Toast.makeText(this, getString(R.string.toast_msg_signUp), Toast.LENGTH_SHORT).show()
+
+                UserInfoList.add(UserInfo(userEmail_data,userName_data,userPw_data, "", "", "",R.drawable.testimg))
+
                 finish()
             }
         }

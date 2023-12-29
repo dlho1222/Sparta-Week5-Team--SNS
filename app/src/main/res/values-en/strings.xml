@@ -27,4 +27,26 @@ Please follow the input email format.</string>
     <string name="username">Username</string>
     <string name="description_text">Description text</string>
     <string name="comment_text">Comment text</string>
+    <string name="toast_msg_impossibleEmail">This email is already in use</string>
+    <string name="toast_msg_possibleEmail">This email is available</string>
+    <string name="toast_msg_checkEmail">Please check your email</string>
+    <string name="mypage_title">Coffee 4 Group</string>
+    <string name="mypage_name">Name</string>
+    <string name="mypage_etname">Name</string>
+    <string name="mypage_greeting">Write a brief self-introduction\n\n\n\n\n\n</string>
+    <string name="mypage_etgreeting">Write a brief self-introduction\n\n\n\n\n\n</string>
+    <string name="mypage_mbtiType">MBTI:</string>
+    <string name="mypage_mbti">INFP</string>
+    <string name="mypage_etMbti">INFP</string>
+    <string name="mypage_hobbyTitle">Hobbies:</string>
+    <string name="mypage_hobby">Hiking, Exploring Cafes, Stamp Collecting, Cross-stitch, Cycling, Swimming, Listening to Music, Magic, Origami, Painting, Pets, Wine Tasting, Playing Musical Instruments, Pottery, Puzzles, Sculpting, Sewing, Singing</string>
+    <string name="mypage_etHobby">Hobbies: Hiking, Exploring Cafes, Stamp Collecting, Cross-stitch, Cycling, Swimming, Listening to Music, Magic, Origami, Painting, Pets, Wine Tasting, Playing Musical Instruments, Pottery, Puzzles, Sculpting, Sewing, Singing</string>
+    <string name="mypage_friendName">Kim Kyung-sik</string>
+    <string name="mypage_interest">Interests</string>
+    <string name="mypage_interest2">Hiking</string>
+    <string name="mypage_interest3">Interests</string>
+    <string name="mypage_interest4">Dating</string>
+    <string name="mypage_interest5">Interests</string>
+    <string name="mypage_postName">Title of the Post</string>
+    <string name="mypage_postContent">This is the body of the post. It goes on and on annd on and on and on and on and on and on and on and on and on and on and on and on and on and on and on and on and on and on and on and</string>
 </resources>
