@@ -108,7 +108,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-
                     android:id="@+id/tv_mypageComment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -146,9 +145,9 @@
                     android:layout_height="25dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/edit"
-                    android:tint="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toStartOf="@+id/iv_nameok"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
                 <ImageView
                     android:id="@+id/iv_nameok"
@@ -158,7 +157,8 @@
                     android:src="@drawable/check"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -182,9 +182,9 @@
                     android:layout_height="25dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/edit"
-                    android:tint="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toStartOf="@+id/iv_mbtiHobbyOk"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
                 <ImageView
                     android:id="@+id/iv_mbtiHobbyOk"
@@ -194,7 +194,8 @@
                     android:src="@drawable/check"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
 
                 <TextView
@@ -232,6 +233,7 @@
                     android:background="#eeeeee"
                     android:padding="0dp"
                     android:text="INFP"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:visibility="gone"
@@ -259,7 +261,6 @@
                     android:layout_marginBottom="10dp"
                     android:maxLines="2"
                     android:text="등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기 "
-
                     android:textColor="@color/defaultWidgetColor"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -279,6 +280,7 @@
                     android:maxLines="2"
                     android:padding="0dp"
                     android:text="취미: 등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기 "
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:visibility="gone"
@@ -615,18 +617,18 @@
                             android:layout_height="25dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/edit"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toStartOf="@+id/iv_deleteIcon1"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_deleteIcon1"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/garbage"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/imageView11"
@@ -678,9 +680,9 @@
                             android:layout_height="25dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/edit"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toStartOf="@+id/iv_deleteIcon2"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_deleteIcon2"
@@ -688,9 +690,9 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/garbage"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_ContPic"
@@ -741,18 +743,18 @@
                             android:layout_height="25dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/edit"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toStartOf="@+id/iv_deleteIcon3"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_deleteIcon3"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/garbage"
-                            android:tint="@color/defaultWidgetColor"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/defaultWidgetColor" />
 
                         <ImageView
                             android:id="@+id/iv_ContPic3"

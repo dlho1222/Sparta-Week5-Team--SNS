@@ -43,8 +43,8 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
-                    android:clipToOutline="true"
                     android:background="@drawable/edgeround"
+                    android:clipToOutline="true"
                     android:foreground="@drawable/edgestroke"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_launcher_foreground"
@@ -58,38 +58,38 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    tools:text="DINIEL"
                     android:textColor="@color/defaultWidgetColor"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/iv_Profile"
-                    app:layout_constraintTop_toTopOf="@id/iv_Profile" />
+                    app:layout_constraintTop_toTopOf="@id/iv_Profile"
+                    tools:text="DINIEL" />
 
                 <TextView
                     android:id="@+id/tv_KR_Name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    tools:text="다니엘"
                     android:textColor="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_Eng_Name"
-                    app:layout_constraintTop_toBottomOf="@id/tv_Eng_Name" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_Eng_Name"
+                    tools:text="다니엘" />
 
                 <TextView
-                    android:textColor="@color/defaultWidgetColor"
                     android:id="@+id/tv_MBTI"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/mbti_estj"
+                    android:textColor="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_KR_Name"
                     app:layout_constraintTop_toBottomOf="@id/tv_KR_Name" />
 
                 <TextView
-                    android:textColor="@color/defaultWidgetColor"
                     android:id="@+id/tv_Status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/text_state"
+                    android:textColor="@color/defaultWidgetColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_MBTI"
                     app:layout_constraintTop_toBottomOf="@id/tv_MBTI" />
@@ -101,9 +101,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:adjustViewBounds="true"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="50dp"
+                android:adjustViewBounds="true"
                 android:src="@drawable/ic_launcher_foreground"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -111,13 +111,13 @@
 
 
             <TextView
-                android:textColor="@color/defaultWidgetColor"
                 android:id="@+id/tv_Description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:textColor="@color/defaultWidgetColor"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/iv_ContentsImage"
@@ -159,7 +159,6 @@
 
 
             <ImageView
-                android:tint="@color/defaultWidgetColor"
                 android:id="@+id/iv_AddComment"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -168,15 +167,16 @@
                 android:layout_marginBottom="16dp"
                 android:src="@drawable/comment"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_CloseDescription" />
+                app:layout_constraintTop_toBottomOf="@id/tv_CloseDescription"
+                app:tint="@color/defaultWidgetColor" />
 
             <TextView
-                android:textColor="@color/defaultWidgetColor"
                 android:id="@+id/tv_Comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
+                android:textColor="@color/defaultWidgetColor"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -188,21 +188,20 @@
     </ScrollView>
 
     <EditText
-        android:tint="@color/defaultWidgetColor"
-
         android:id="@+id/et_Comment"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:background="@drawable/bg_input_box"
         android:hint="@string/et_commentHint"
+        android:tint="@color/defaultWidgetColor"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/iv_Send"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:tint="@color/defaultWidgetColor"
 
         android:id="@+id/iv_Send"
         android:layout_width="50dp"
@@ -212,5 +211,6 @@
         app:layout_constraintBottom_toBottomOf="@id/et_Comment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/et_Comment"
-        app:layout_constraintTop_toTopOf="@id/et_Comment" />
+        app:layout_constraintTop_toTopOf="@id/et_Comment"
+        app:tint="@color/defaultWidgetColor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
