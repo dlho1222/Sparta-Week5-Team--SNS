@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -185,7 +184,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        Log.d("HomeActivity","userName : $id")
 
         btn_signIn.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
@@ -258,11 +256,12 @@ class MainActivity : AppCompatActivity() {
         //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
         var userInfo = UserInfoList.findUserInfoWithEmail(email)
 
+
         val intent = Intent(this, MypageActivity::class.java).apply {
-            putExtra(USER_INFO, userInfo)
+            putExtra(ID, id)
+            startActivity(this)
+            overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
         }
-        startActivity(intent)
-        overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
     }
 
     private fun goToReels(view: View, reelsContents: Reels) {
