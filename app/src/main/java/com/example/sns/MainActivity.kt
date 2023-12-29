@@ -8,7 +8,6 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +16,8 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var getName: ActivityResultLauncher<Intent>
+    private var id = ""
+    private var email=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -87,6 +88,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val goTomyPage = findViewById<TextView>(R.id.tv_signedIn).apply {
+            setOnClickListener {
+                goToMyPage(it)
+            }
+        }
+
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
@@ -96,8 +103,9 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
-                val userName = it.data?.getStringExtra("userName_DataFromSignUpActivity") ?: ""
-
+                val userName = it.data?.getStringExtra(USER_NAME) ?: ""
+                id = userName
+                email = it.data?.getStringExtra(EMAIL) ?: ""
                 tv_name.text = userName
                 btn_signIn.visibility = View.INVISIBLE
                 tv_name.visibility = View.VISIBLE
@@ -112,7 +120,7 @@ class MainActivity : AppCompatActivity() {
             //뒤로가기 버튼 클릭시 애니메이션은 호출한 액티비티에 구현해야 할 듯
         }
 
-        if (intent.hasExtra("userName_DataFromSignUpActivity")) {
+        if (intent.hasExtra(USER_NAME)) {
             btn_signIn.visibility = View.INVISIBLE
             tv_name.visibility = View.VISIBLE
         } else {
@@ -163,18 +171,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToDetail(view: View, postContents: Post) {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
-        val userName_data = intent.getStringExtra("name_DataFromSignUpActivity")
         val intent = Intent(this, DetailActivity::class.java).apply {
-            putExtra("user", postContents)
-            putExtra("name_DataFromSignUpActivity",userName_data)
+            putExtra(POST_INFO, postContents)
+            putExtra(ID,id)
         }
         startActivity(intent)
     }
 
     fun goToMyPage(view: View) {
         //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+        var userInfo = UserInfoList.findUserInfoWithEmail(email)
 
-        val intent = Intent(this, MypageActivity::class.java)
+        val intent = Intent(this, MypageActivity::class.java).apply{
+            putExtra(USER_INFO,userInfo)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
     }

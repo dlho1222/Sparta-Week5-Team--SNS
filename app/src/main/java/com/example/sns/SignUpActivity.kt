@@ -55,9 +55,9 @@ class SignUpActivity : AppCompatActivity() {
 
                 // 이름 데이터 값 SignInActivity에 넘기기
                 val intent = Intent(this, SignInActivity::class.java).apply {
-                    putExtra("userName_DataFromSignUpActivity", userName_data)
-                    putExtra("userEmail_DataFromSignUpActivity", userEmail_data)
-                    putExtra("userPw_DataFromSignUpActivity", userPw_data)
+                    putExtra(USER_NAME, userName_data)
+                    putExtra(USER_EMAIL, userEmail_data)
+                    putExtra(USER_PASSWORD, userPw_data)
                 }
                 setResult(RESULT_OK, intent)
 
