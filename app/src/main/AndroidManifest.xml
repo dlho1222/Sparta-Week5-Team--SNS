@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SNS"
         tools:targetApi="31">
         <activity
+            android:name=".ReelsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -20,8 +23,7 @@
             android:exported="false" />
         <activity
             android:name=".MypageActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".DetailActivity"
             android:exported="false" />

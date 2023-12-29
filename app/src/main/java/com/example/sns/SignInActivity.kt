@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class SignInActivity : AppCompatActivity() {
+    private var userName = ""
 
     lateinit var getIdentity: ActivityResultLauncher<Intent>
     override fun onBackPressed() {
@@ -34,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
         ) {
             if (it.resultCode == RESULT_OK) {
 
-                val userName = it.data?.getStringExtra(USER_NAME) ?: ""
+                userName = it.data?.getStringExtra(USER_NAME) ?: ""
                 val userEmail = it.data?.getStringExtra(USER_EMAIL) ?: ""
                 val userPw = it.data?.getStringExtra(USER_PASSWORD) ?: ""
 
@@ -54,19 +55,21 @@ class SignInActivity : AppCompatActivity() {
         // 로그인 버튼 클릭 시 MainActivity로 전환
         btn_login.setOnClickListener {
             //val userEmailInfo = UserInfoList.findUserInfoWithEmail(user_Email.text.toString())
-            val userName = UserInfoList.findNameWithEmail(user_Email.text.toString())
+//            val userName = UserInfoList.findNameWithEmail(user_Email.text.toString())
 
             // 입력받은 이메일, 비밀번호 데이터 값
             val userEmail_data = user_Email.text.toString()
             val userPw_data = user_Pw.text.toString()
 
-            if (userEmail_data.trim().isEmpty() || userPw_data.trim().isEmpty()) {
+
+            if (user_Email.text.trim().isEmpty() || user_Pw.text.trim().isEmpty()) {
                 Toast.makeText(this, getString(R.string.toast_msg_idpwNoInput), Toast.LENGTH_SHORT).show()
             } else {
                 val intent = Intent()
                 intent.putExtra(USER_NAME, userName)
 
                 setResult(RESULT_OK, intent)
+                //Log.d("SignInActivity2","userName : $userName")
                 finish()
             }
         }

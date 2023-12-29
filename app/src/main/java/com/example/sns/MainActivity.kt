@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var getName: ActivityResultLauncher<Intent>
     private var id = ""
-    private var email=""
+    private var email = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -94,6 +93,77 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        /*
+        val reels1 = findViewById<ImageView>(R.id.iv_reels1).setOnClickListener {
+            goToReels(it, PostList.get(0))
+        }
+        reels1.setImageResource(PostList.get(0).profile)
+        */
+
+        val reels1 = findViewById<ImageView>(R.id.iv_reels1)
+        reels1.setOnClickListener {
+            goToReels(it, ReelsList.get(0))
+        }
+        reels1.setImageResource(ReelsList.get(0).profile)
+        val reels1_1 = findViewById<TextView>(R.id.tv_reels1)
+        reels1_1.text = "${ReelsList.get(0).id}"
+
+        val reels2 = findViewById<ImageView>(R.id.iv_reels2)
+        reels2.setOnClickListener {
+            goToReels(it, ReelsList.get(1))
+        }
+        reels2.setImageResource(ReelsList.get(1).profile)
+        val reels2_1 = findViewById<TextView>(R.id.tv_reels2)
+        reels2_1.text = "${ReelsList.get(1).id}"
+
+        val reels3 = findViewById<ImageView>(R.id.iv_reels3)
+        reels3.setOnClickListener {
+            goToReels(it, ReelsList.get(2))
+        }
+        reels3.setImageResource(ReelsList.get(2).profile)
+        val reels3_1 = findViewById<TextView>(R.id.tv_reels3)
+        reels3_1.text = "${ReelsList.get(2).id}"
+
+        val reels4 = findViewById<ImageView>(R.id.iv_reels4)
+        reels4.setOnClickListener {
+            goToReels(it, ReelsList.get(3))
+        }
+        reels4.setImageResource(ReelsList.get(3).profile)
+        val reels4_1 = findViewById<TextView>(R.id.tv_reels4)
+        reels4_1.text = "${ReelsList.get(3).id}"
+
+        val reels5 = findViewById<ImageView>(R.id.iv_reels5)
+        reels5.setOnClickListener {
+            goToReels(it, ReelsList.get(4))
+        }
+        reels5.setImageResource(ReelsList.get(4).profile)
+        val reels5_1 = findViewById<TextView>(R.id.tv_reels5)
+        reels5_1.text = "${ReelsList.get(4).id}"
+
+        val reels6 = findViewById<ImageView>(R.id.iv_reels6)
+        reels6.setOnClickListener {
+            goToReels(it, ReelsList.get(5))
+        }
+        reels6.setImageResource(ReelsList.get(5).profile)
+        val reels6_1 = findViewById<TextView>(R.id.tv_reels6)
+        reels6_1.text = "${ReelsList.get(5).id}"
+
+        val reels7 = findViewById<ImageView>(R.id.iv_reels7)
+        reels7.setOnClickListener {
+            goToReels(it, ReelsList.get(6))
+        }
+        reels7.setImageResource(ReelsList.get(6).profile)
+        val reels7_1 = findViewById<TextView>(R.id.tv_reels7)
+        reels7_1.text = "${ReelsList.get(6).id}"
+
+        val reels8 = findViewById<ImageView>(R.id.iv_reels8)
+        reels8.setOnClickListener {
+            goToReels(it, ReelsList.get(7))
+        }
+        reels8.setImageResource(ReelsList.get(7).profile)
+        val reels8_1 = findViewById<TextView>(R.id.tv_reels8)
+        reels8_1.text = "${ReelsList.get(7).id}"
+
 
         val btn_signIn = findViewById<TextView>(R.id.tv_signIn)
         val tv_name = findViewById<TextView>(R.id.tv_signedIn)
@@ -113,7 +183,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        Log.d("HomeActivity","userName : $id")
 
         btn_signIn.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
@@ -150,7 +219,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val snackbar = Snackbar.make(
                 findViewById(android.R.id.content),
-                "공지 : 아주 특별 이벤트가 있습니다!! 자리로 가장 먼저 오시는 분께 소고기 오마카세!!",
+                "공지 : 4조 스낵바 뿜!",
                 Snackbar.LENGTH_INDEFINITE
             )
             snackbar.setAction("닫기") {
@@ -176,21 +245,35 @@ class MainActivity : AppCompatActivity() {
         //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, DetailActivity::class.java).apply {
             putExtra(POST_INFO, postContents)
-            putExtra(ID,id)
+            putExtra(ID, id)
         }
         startActivity(intent)
+        overridePendingTransition(R.anim.get_slide_in_trans, R.anim.get_none_trans)
     }
 
     fun goToMyPage(view: View) {
         //Toast.makeText(view.context, "마이 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
         var userInfo = UserInfoList.findUserInfoWithEmail(email)
 
-        val intent = Intent(this, MypageActivity::class.java).apply{
-            putExtra(USER_INFO,userInfo)
+
+        val intent = Intent(this, MypageActivity::class.java).apply {
+            putExtra(ID, id)
+            startActivity(this)
+            overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
+        }
+    }
+
+    private fun goToReels(view: View, reelsContents: Reels) {
+        //Toast.makeText(view.context, "디테일 페이지로 이동합니다", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, ReelsActivity::class.java).apply {
+            putExtra(REELS_INFO, reelsContents)
+            putExtra(ID, id)
         }
         startActivity(intent)
-        overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
+        overridePendingTransition(R.anim.get_in_trans, R.anim.get_none_trans)
+
     }
+
 }
 
 
