@@ -2,13 +2,6 @@ package com.example.sns
 
 object UserInfoList {
     private val list = mutableListOf<UserInfo>()
-//    val email: String,
-//    val name: String,
-//    val password: String,
-//    var comment: String,
-//    var hobby: String,
-//    var mbti: String,
-//    val profileImg: Int
     init {
         add(
             UserInfo(
@@ -64,8 +57,12 @@ object UserInfoList {
     fun add(userInfo: UserInfo) {
         list.add(userInfo)
     }
-    fun delete(index: Int){
-        list.removeAt(index)
+    fun delete(email: String){
+        list.find{target->
+            target.email == email
+        }.let{
+            list.remove(it)
+        }
     }
     fun findUserInfoWithEmail(email:String?): UserInfo? {
         return list.find {
@@ -78,5 +75,24 @@ object UserInfoList {
             it.email == email
         }
         return list[index].name
+    }
+
+    fun modifyEmail(email: String,changedEmail:String) {
+        val index = list.indexOfFirst {
+            it.email == email
+        }
+        list[index].email = changedEmail
+    }
+    fun modifyName(email: String,changedName:String) {
+        val index = list.indexOfFirst {
+            it.email == email
+        }
+        list[index].name = changedName
+    }
+    fun modifyPassword(email: String,changedPassword:String) {
+        val index = list.indexOfFirst {
+            it.email == email
+        }
+        list[index].password = changedPassword
     }
 }

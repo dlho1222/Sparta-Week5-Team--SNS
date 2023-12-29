@@ -60,7 +60,6 @@ object PostList {
         )
 
     }
-
     fun get(index: Int): Post {
         return list[index]
     }
@@ -69,7 +68,4 @@ object PostList {
         list.add(post)
     }
 
-    fun updateHeart(id: String, isHeart: Boolean,post:Post) {
-
-    }
 }

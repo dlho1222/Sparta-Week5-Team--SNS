@@ -24,4 +24,23 @@
     <string name="toast_msg_impossibleEmail">이미 사용중인 이메일입니다</string>
     <string name="toast_msg_possibleEmail">사용 가능한 이메일입니다</string>
     <string name="toast_msg_checkEmail">이메일 중복체크를 해주세요</string>
+    <string name="mypage_title">커피4조</string>
+    <string name="mypage_name">이름</string>
+    <string name="mypage_etname">이름</string>
+    <string name="mypage_greeting">간단한 자기소개 쓰기\n\n\n\n\n\n</string>
+    <string name="mypage_etgreeting">간단한 자기소개 쓰기\n\n\n\n\n\n</string>
+    <string name="mypage_mbtiType">성격유형 :</string>
+    <string name="mypage_mbti">INFP</string>
+    <string name="mypage_etMbti">INFP</string>
+    <string name="mypage_hobbyTitle">취미:</string>
+    <string name="mypage_hobby">등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기</string>
+    <string name="mypage_etHobby">취미: 등산, 카페 탐방, 우표 수집, 십자수, 사이클링, 수영, 음악 듣기, 마술, 종이접기, 회화, 애완동물, 우취, 악기 연주, 도예, 퍼즐, 조각, 바느질, 노래 부르기</string>
+    <string name="mypage_friendName">김경식</string>
+    <string name="mypage_interest">관심사</string>
+    <string name="mypage_interest2">등산</string>
+    <string name="mypage_interest3">관심사</string>
+    <string name="mypage_interest4">연애</string>
+    <string name="mypage_interest5">관심사</string>
+    <string name="mypage_postName">글제목이다아아아아</string>
+    <string name="mypage_postContent">본문이다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아</string>
 </resources>
