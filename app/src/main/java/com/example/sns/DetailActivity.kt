@@ -11,7 +11,6 @@ import androidx.core.view.isVisible
 
 class DetailActivity : AppCompatActivity() {
     private var isHeart = false //좋아요 상태
-    private var saveComment = ""
     private var postInfo: Post? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +20,7 @@ class DetailActivity : AppCompatActivity() {
         val etComment = findViewById<EditText>(R.id.et_Comment)
         val ivHeart = findViewById<ImageView>(R.id.iv_Heart)
 
-
-
         postInfo = intent.getParcelableExtra<Post>(POST_INFO)
-
         isHeart = postInfo?.isLike ?: false
 
         toolBar.apply {
@@ -55,7 +51,6 @@ class DetailActivity : AppCompatActivity() {
 
 
         ivComment.setOnClickListener {//코멘트 아이콘 눌렀을 때 commentwindow 보여줌
-            //addCommentDialog()
             showCommentWindow()
         }
         val ivSend = findViewById<ImageView>(R.id.iv_Send)?.apply {//댓글 입력하는 역할
@@ -119,8 +114,6 @@ class DetailActivity : AppCompatActivity() {
     private fun addComment(text: String) { //댓글 달기
         val id = intent.getStringExtra(ID)
         val tvComment = findViewById<TextView>(R.id.tv_Comment)
-        saveComment += "[$id]  $text\n"
-
         tvComment.append("\n[$id] $text")
     }
 

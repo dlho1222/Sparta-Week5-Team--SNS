@@ -98,7 +98,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-
                     android:id="@+id/tv_mypageComment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -148,7 +147,8 @@
                     android:src="@drawable/check"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -184,7 +184,8 @@
                     android:src="@drawable/check"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/defaultWidgetColor" />
 
 
                 <TextView
@@ -268,6 +269,7 @@
                     android:ellipsize="end"
                     android:maxLines="2"
                     android:padding="0dp"
+                    android:textColor="@color/black"
                     android:text="@string/mypage_hobby"
                     android:textSize="18sp"
                     android:textStyle="bold"
