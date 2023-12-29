@@ -16,6 +16,7 @@ SNS 앱 만들기
     - [v]  마이 페이지 화면
     - [v]  Activity 전환시 animation 구현
     - [v]  영어 버전으로 변경 적용해보기(string.xml)
+      
     추가 구현 기능(선택)
     - [v]  동그란 ImageView 만들기
     - [v]  스크롤 기능 추가
