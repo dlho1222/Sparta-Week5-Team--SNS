@@ -3,13 +3,9 @@ package com.example.sns
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -19,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
-import androidx.fragment.app.DialogFragment
 
 class MypageActivity : AppCompatActivity() {
 
@@ -46,10 +41,10 @@ class MypageActivity : AppCompatActivity() {
 
         userInfo?.profileImg?.let {
             ivProfilePic.setImageResource(it) }
-
-        userInfo?.name?.let{
-            findViewById<TextView>(R.id.tv_mypageName).text = it  }
-
+        val id = intent.getStringExtra(ID)
+        findViewById<TextView>(R.id.tv_mypageName).apply {
+            text = id
+        }
         userInfo?.comment?.let{
             findViewById<TextView>(R.id.tv_mypageComment).text = it }
 

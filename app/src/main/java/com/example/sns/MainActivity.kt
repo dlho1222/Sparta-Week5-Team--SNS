@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -183,7 +182,7 @@ class MainActivity : AppCompatActivity() {
         var userInfo = UserInfoList.findUserInfoWithEmail(email)
 
         val intent = Intent(this, MypageActivity::class.java).apply{
-            putExtra(USER_INFO,userInfo)
+            putExtra(ID,id)
         }
         startActivity(intent)
         overridePendingTransition(R.anim.get_in_trans, R.anim.get_out_trans)
