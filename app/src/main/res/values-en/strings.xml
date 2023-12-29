@@ -22,6 +22,9 @@
     <string name="toast_msg_notEmailForm">
 Please follow the input email format.</string>
     <string name="toast_msg_signUp">Success Signup</string>
+    <string name="toast_msg_impossibleEmail">This email is already in use</string>
+    <string name="toast_msg_possibleEmail">This email is available</string>
+    <string name="toast_msg_checkEmail">Please check your email</string>
     <string name="mypage_title">Coffee 4 Group</string>
     <string name="mypage_name">Name</string>
     <string name="mypage_etname">Name</string>
